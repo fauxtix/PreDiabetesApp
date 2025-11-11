@@ -101,24 +101,25 @@
                     <Label Text="{Binding Message}" FontSize="14" LineBreakMode="WordWrap" TextColor="{DynamicResource SecondaryTextColor}" />
                 </ScrollView>
 
-                <Label Text="IMC" FontAttributes="Bold" FontSize="14" />
+                <!-- IMC section: only visible when BmiText is set -->
+                <Label Text="IMC" FontAttributes="Bold" FontSize="14"
+                       IsVisible="{Binding BmiText, Converter={x:Static conv:NullOrEmptyToBoolConverter.Instance}}" />
                 <Border                    
                     Background="#F7FBFF" Stroke="{StaticResource BorderLight}" StrokeThickness="1" 
                     Padding="8" 
-                    Margin="0,-6,0,10">
+                    Margin="0,-6,0,10"
+                    IsVisible="{Binding BmiText, Converter={x:Static conv:NullOrEmptyToBoolConverter.Instance}}">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="10" />
                     </Border.StrokeShape>
 
-                    <HorizontalStackLayout 
-                        Spacing="8" 
-                        IsVisible="{Binding BmiText, Converter={x:Static conv:NullOrEmptyToBoolConverter.Instance}}">
-                        
+                    <HorizontalStackLayout Spacing="8">
                         <Label Text="{Binding BmiIcon}" FontSize="14" VerticalOptions="Center" />
                         <Label Text="{Binding BmiText}" FontSize="13" TextColor="{Binding BmiColor}" VerticalOptions="Center" />
                         <Label Text="{Binding BmiCategory}" FontSize="12" TextColor="{Binding BmiColor}" VerticalOptions="Center" />
                     </HorizontalStackLayout>
                 </Border>
+
                 <Label Text="{Binding StatusText}" FontSize="13" TextColor="{DynamicResource PrimaryTextColor}" IsVisible="{Binding IsStatusVisible}" HorizontalOptions="Center" />
 
                 <HorizontalStackLayout Spacing="10" HorizontalOptions="End">
