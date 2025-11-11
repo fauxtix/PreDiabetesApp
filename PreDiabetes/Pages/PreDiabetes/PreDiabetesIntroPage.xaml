@@ -63,14 +63,14 @@
             <Border Style="{StaticResource Card}">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="{resx:Localize Key=Intro_OQueAvaliaCalculadora}" Style="{StaticResource HeaderLabel}" />
-                    <Label Text="{resx:Localize Key=IIntro_Paragrafo_2}"
+                    <Label Text="{resx:Localize Key=Intro_Paragrafo_2}"
                            Style="{StaticResource BodyLabel}" />
                 </VerticalStackLayout>
             </Border>
 
             <Border Style="{StaticResource Card}">
                 <VerticalStackLayout Spacing="8">
-                    <Label Text="{resx:Localize Key=IIntro_Paragrafo_3}" Style="{StaticResource HeaderLabel}" />
+                    <Label Text="{resx:Localize Key=Intro_Paragrafo_3}" Style="{StaticResource HeaderLabel}" />
                     <CollectionView ItemsSource="{Binding Items}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="x:String">
@@ -83,7 +83,7 @@
 
             <Border Style="{StaticResource Card}">
                 <VerticalStackLayout Spacing="8">
-                    <Label Text="{resx:Localize Key=IIntr_Paragrafo_4}" Style="{StaticResource HeaderLabel}" />
+                    <Label Text="{resx:Localize Key=Intro_Paragrafo_4}" Style="{StaticResource HeaderLabel}" />
                     <Label
                       Text="{resx:Localize Key=IIntro_Paragrafo_5}"
                       Style="{StaticResource BodyLabel}"
@@ -91,7 +91,7 @@
                 </VerticalStackLayout>
             </Border>
 
-            <Label Text="{resx:Localize Key=IIntro_Paragrafo_6}" Style="{StaticResource BodyLabel}" HorizontalOptions="Center" Margin="6,2" />
+            <Label Text="{resx:Localize Key=Intro_Paragrafo_6}" Style="{StaticResource BodyLabel}" HorizontalOptions="Center" Margin="6,2" />
 
             <Button Text="{resx:Localize Key=BotaoSimulacao}"
                     Command="{Binding StartSimulationCommand}"
