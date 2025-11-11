@@ -85,7 +85,7 @@
                 <VerticalStackLayout Spacing="8">
                     <Label Text="{resx:Localize Key=Intro_Paragrafo_4}" Style="{StaticResource HeaderLabel}" />
                     <Label
-                      Text="{resx:Localize Key=IIntro_Paragrafo_5}"
+                      Text="{resx:Localize Key=Intro_Paragrafo_5}"
                       Style="{StaticResource BodyLabel}"
                       Margin="6,4"/>
                 </VerticalStackLayout>

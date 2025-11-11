@@ -235,7 +235,7 @@
     <value>Status</value>
   </data>
   <data name="TituloFeminino" xml:space="preserve">
-    <value>Female</value>
+    <value>Woman</value>
   </data>
   <data name="TituloFim" xml:space="preserve">
     <value>End</value>
@@ -259,7 +259,7 @@
     <value>Brand</value>
   </data>
   <data name="TituloMasculino" xml:space="preserve">
-    <value>Male</value>
+    <value>Man</value>
   </data>
   <data name="TituloMedicacao" xml:space="preserve">
     <value>Medication</value>
@@ -319,7 +319,7 @@
     <value>Diseases</value>
   </data>
   <data name="TituloPeso" xml:space="preserve">
-    <value>Weight</value>
+    <value>Weight in Kg</value>
   </data>
   <data name="TituloCor" xml:space="preserve">
     <value>Color</value>
@@ -701,5 +701,77 @@
   </data>
   <data name="Intro_Botao_Simulacao" xml:space="preserve">
     <value>Simulation</value>
+  </data>
+  <data name="TituloSimulacao" xml:space="preserve">
+    <value>Assess your risk of prediabetes</value>
+  </data>
+  <data name="Simulacao_GrupoIdades" xml:space="preserve">
+    <value>Age Group</value>
+  </data>
+  <data name="Simulacao_HitoricoExames_Titulo" xml:space="preserve">
+    <value>History and Exams</value>
+  </data>
+  <data name="Simulacao_Fumador" xml:space="preserve">
+    <value>Smoker</value>
+  </data>
+  <data name="Simulacao_Hipertensao" xml:space="preserve">
+    <value>Do you take blood pressure meds?</value>
+  </data>
+  <data name="Simulacao_Parente" xml:space="preserve">
+    <value>Close relative with diabetes?</value>
+  </data>
+  <data name="Simulacao_Vegetais_Titulo" xml:space="preserve">
+    <value>How often do you eat vegetables and fruit?</value>
+  </data>
+  <data name="Simulacao_Anca_Titulo" xml:space="preserve">
+    <value>Hip Width</value>
+  </data>
+  <data name="Simulacao_Vegetais_Opcao1" xml:space="preserve">
+    <value>Every day</value>
+  </data>
+  <data name="Simulacao_Vegetais_Opcao2" xml:space="preserve">
+    <value>Sometimes</value>
+  </data>
+  <data name="Simulacao_Vegetais_Label" xml:space="preserve">
+    <value>Vegetable/Fruit Consumption</value>
+  </data>
+  <data name="Simulacao_AtividadeFisica" xml:space="preserve">
+    <value>Do you exercise for 30 minutes a day?</value>
+  </data>
+  <data name="Simulacao_Glucose" xml:space="preserve">
+    <value>Detected high glucose levels in tests?</value>
+  </data>
+  <data name="TituloMasculinos" xml:space="preserve">
+    <value>Men</value>
+  </data>
+  <data name="TituloFemininos" xml:space="preserve">
+    <value>Women</value>
+  </data>
+  <data name="Bmi_VeryLow" xml:space="preserve">
+    <value>Very Low</value>
+  </data>
+  <data name="Bmi_Low" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="Bmi_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Bmi_High" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="Bmi_VeryHigh" xml:space="preserve">
+    <value>Very High</value>
+  </data>
+  <data name="Btn_Calcular" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="TituloPesoAltura" xml:space="preserve">
+    <value>Weight / Height</value>
+  </data>
+  <data name="TituloAltura" xml:space="preserve">
+    <value>Height in cm</value>
+  </data>
+  <data name="TituloIMC" xml:space="preserve">
+    <value>BMI</value>
   </data>
 </root>

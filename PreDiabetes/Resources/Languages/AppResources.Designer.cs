@@ -115,6 +115,60 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alto.
+        /// </summary>
+        public static string Bmi_High {
+            get {
+                return ResourceManager.GetString("Bmi_High", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Baixo.
+        /// </summary>
+        public static string Bmi_Low {
+            get {
+                return ResourceManager.GetString("Bmi_Low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        public static string Bmi_Normal {
+            get {
+                return ResourceManager.GetString("Bmi_Normal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Muito Alto.
+        /// </summary>
+        public static string Bmi_VeryHigh {
+            get {
+                return ResourceManager.GetString("Bmi_VeryHigh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Muito baixo.
+        /// </summary>
+        public static string Bmi_VeryLow {
+            get {
+                return ResourceManager.GetString("Bmi_VeryLow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calcular.
+        /// </summary>
+        public static string Btn_Calcular {
+            get {
+                return ResourceManager.GetString("Btn_Calcular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancelar.
         /// </summary>
         public static string Cancelar {
@@ -219,6 +273,69 @@ namespace PreDiabetes.Resources.Languages {
         public static string Gravar {
             get {
                 return ResourceManager.GetString("Gravar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simulação.
+        /// </summary>
+        public static string Intro_Botao_Simulacao {
+            get {
+                return ResourceManager.GetString("Intro_Botao_Simulacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O que avalia esta calculadora.
+        /// </summary>
+        public static string Intro_OQueAvaliaCalculadora {
+            get {
+                return ResourceManager.GetString("Intro_OQueAvaliaCalculadora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esta ferramenta estima o risco de pré-diabetes com base em fatores demográficos, hábitos e exames simples. Os resultados são indicativos e não substituem uma avaliação clínica.
+        /// </summary>
+        public static string Intro_Paragrafo_2 {
+            get {
+                return ResourceManager.GetString("Intro_Paragrafo_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nota sobre precisão.
+        /// </summary>
+        public static string Intro_Paragrafo_3 {
+            get {
+                return ResourceManager.GetString("Intro_Paragrafo_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modelo usado.
+        /// </summary>
+        public static string Intro_Paragrafo_4 {
+            get {
+                return ResourceManager.GetString("Intro_Paragrafo_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esta aplicação estima o risco usando o score FINDRISC. Para maior precisão, preencha Peso (kg) e Altura (cm) na simulação. Se não fornecer, o IMC será estimado a partir do índice de cintura..
+        /// </summary>
+        public static string Intro_Paragrafo_5 {
+            get {
+                return ResourceManager.GetString("Intro_Paragrafo_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resultados são indicativos e não substituem avaliação médica..
+        /// </summary>
+        public static string Intro_Paragrafo_6 {
+            get {
+                return ResourceManager.GetString("Intro_Paragrafo_6", resourceCulture);
             }
         }
         
@@ -556,6 +673,114 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Largura de Anca.
+        /// </summary>
+        public static string Simulacao_Anca_Titulo {
+            get {
+                return ResourceManager.GetString("Simulacao_Anca_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pratica 30 minutos de atividade física por dia?.
+        /// </summary>
+        public static string Simulacao_AtividadeFisica {
+            get {
+                return ResourceManager.GetString("Simulacao_AtividadeFisica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fumador.
+        /// </summary>
+        public static string Simulacao_Fumador {
+            get {
+                return ResourceManager.GetString("Simulacao_Fumador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detectou glucose elevada em análises?.
+        /// </summary>
+        public static string Simulacao_Glucose {
+            get {
+                return ResourceManager.GetString("Simulacao_Glucose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grupo de Idades.
+        /// </summary>
+        public static string Simulacao_GrupoIdades {
+            get {
+                return ResourceManager.GetString("Simulacao_GrupoIdades", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toma medicação para a Hipertensão?.
+        /// </summary>
+        public static string Simulacao_Hipertensao {
+            get {
+                return ResourceManager.GetString("Simulacao_Hipertensao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Histórico e Exames.
+        /// </summary>
+        public static string Simulacao_HitoricoExames_Titulo {
+            get {
+                return ResourceManager.GetString("Simulacao_HitoricoExames_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parente próximo com diabetes?.
+        /// </summary>
+        public static string Simulacao_Parente {
+            get {
+                return ResourceManager.GetString("Simulacao_Parente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consumo de Vegetais / Fruta.
+        /// </summary>
+        public static string Simulacao_Vegetais_Label {
+            get {
+                return ResourceManager.GetString("Simulacao_Vegetais_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Todos os dias.
+        /// </summary>
+        public static string Simulacao_Vegetais_Opcao1 {
+            get {
+                return ResourceManager.GetString("Simulacao_Vegetais_Opcao1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Por vezes.
+        /// </summary>
+        public static string Simulacao_Vegetais_Opcao2 {
+            get {
+                return ResourceManager.GetString("Simulacao_Vegetais_Opcao2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Com que frequência come vegetais e frutas?.
+        /// </summary>
+        public static string Simulacao_Vegetais_Titulo {
+            get {
+                return ResourceManager.GetString("Simulacao_Vegetais_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registo foi eliminado com sucesso..
         /// </summary>
         public static string SuccessDelete {
@@ -633,6 +858,15 @@ namespace PreDiabetes.Resources.Languages {
         public static string Titulo_Titulo {
             get {
                 return ResourceManager.GetString("Titulo_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Altura em cm.
+        /// </summary>
+        public static string TituloAltura {
+            get {
+                return ResourceManager.GetString("TituloAltura", resourceCulture);
             }
         }
         
@@ -1123,11 +1357,20 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fèmea.
+        ///   Looks up a localized string similar to Mulher.
         /// </summary>
         public static string TituloFeminino {
             get {
                 return ResourceManager.GetString("TituloFeminino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mulheres.
+        /// </summary>
+        public static string TituloFemininos {
+            get {
+                return ResourceManager.GetString("TituloFemininos", resourceCulture);
             }
         }
         
@@ -1240,6 +1483,15 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IMC.
+        /// </summary>
+        public static string TituloIMC {
+            get {
+                return ResourceManager.GetString("TituloIMC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Indique um título para o documento.
         /// </summary>
         public static string TituloIndiqueTitulo {
@@ -1294,11 +1546,20 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Macho.
+        ///   Looks up a localized string similar to Homem.
         /// </summary>
         public static string TituloMasculino {
             get {
                 return ResourceManager.GetString("TituloMasculino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Homens.
+        /// </summary>
+        public static string TituloMasculinos {
+            get {
+                return ResourceManager.GetString("TituloMasculinos", resourceCulture);
             }
         }
         
@@ -1411,11 +1672,20 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Peso.
+        ///   Looks up a localized string similar to Peso em Kg.
         /// </summary>
         public static string TituloPeso {
             get {
                 return ResourceManager.GetString("TituloPeso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Peso / Altura.
+        /// </summary>
+        public static string TituloPesoAltura {
+            get {
+                return ResourceManager.GetString("TituloPesoAltura", resourceCulture);
             }
         }
         
@@ -1434,6 +1704,15 @@ namespace PreDiabetes.Resources.Languages {
         public static string TituloPrazoEmMeses {
             get {
                 return ResourceManager.GetString("TituloPrazoEmMeses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Projetos.
+        /// </summary>
+        public static string TituloProjetos {
+            get {
+                return ResourceManager.GetString("TituloProjetos", resourceCulture);
             }
         }
         
@@ -1542,6 +1821,15 @@ namespace PreDiabetes.Resources.Languages {
         public static string TituloSexo {
             get {
                 return ResourceManager.GetString("TituloSexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avalie o seu risco de pré-diabetes.
+        /// </summary>
+        public static string TituloSimulacao {
+            get {
+                return ResourceManager.GetString("TituloSimulacao", resourceCulture);
             }
         }
         
