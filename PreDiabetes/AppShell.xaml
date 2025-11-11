@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PreDiabetes.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
+    xmlns:resx="clr-namespace:PreDiabetes.Resources.Languages"
+    xmlns:pages="clr-namespace:PreDiabetes.Pages"
+    xmlns:prediabetespages="clr-namespace:PreDiabetes.Pages"
+    xmlns:languagespages="clr-namespace:PreDiabetes.Pages.Languages"
+    Shell.FlyoutBehavior="Flyout"
+    Title="PreDiabetes">
+
+    <ShellContent
+        Title="Dashboard"
+        Icon="{StaticResource IconDashboard}"
+        ContentTemplate="{DataTemplate pages:MainPage}"
+        Route="main" />
+
+    <ShellContent
+        Title="{resx:Localize Key=TituloProjetos}"
+        Icon="{StaticResource IconProjects}"
+        ContentTemplate="{DataTemplate pages:ProjectListPage}"
+        Route="projects" />
+
+    <ShellContent
+        Title="Manage Meta"
+        Icon="{StaticResource IconMeta}"
+        ContentTemplate="{DataTemplate pages:ManageMetaPage}"
+        Route="manage" />
+
+    <ShellContent
+        Title="Pre diabetes"
+        Icon="{StaticResource IconMeta}"
+        ContentTemplate="{DataTemplate prediabetespages:PreDiabetesIntroPage}"
+        Route="pre-diabetes" />
+    <ShellContent
+                    Title="{resx:Localize Key=TituloIdiomas}" 
+                    Icon="language.png"
+                    ContentTemplate="{DataTemplate languagespages:LanguageSettingsPage}"
+                    Route="LanguageSettingsPage" />
+
+    <Shell.FlyoutFooter>
+        <Grid Padding="15">
+            <sf:SfSegmentedControl x:Name="ThemeSegmentedControl" 
+                VerticalOptions="Center" HorizontalOptions="Center" SelectionChanged="SfSegmentedControl_SelectionChanged"
+                SegmentWidth="40" SegmentHeight="40">
+                <sf:SfSegmentedControl.ItemsSource>
+                    <x:Array Type="{x:Type sf:SfSegmentItem}">
+                        <sf:SfSegmentItem ImageSource="{StaticResource IconLight}"/>
+                        <sf:SfSegmentItem ImageSource="{StaticResource IconDark}"/>
+                    </x:Array>
+                </sf:SfSegmentedControl.ItemsSource>
+            </sf:SfSegmentedControl>
+        </Grid>
+    </Shell.FlyoutFooter>
+
+</Shell>

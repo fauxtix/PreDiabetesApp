@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Sair" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Gravar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="TituloPesquisarContacto" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="EditMsg" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="DadosEmFalta" xml:space="preserve">
+    <value>Invalid operation /  Invalid data or missing</value>
+  </data>
+  <data name="Nao" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NewMsg" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="Pet_Brand" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Pet_Breed" xml:space="preserve">
+    <value>Breed</value>
+  </data>
+  <data name="Pet_Consultations" xml:space="preserve">
+    <value>Consultations</value>
+  </data>
+  <data name="Pet_Dewormers" xml:space="preserve">
+    <value>Dewormers</value>
+  </data>
+  <data name="Pet_Food" xml:space="preserve">
+    <value>Pet food</value>
+  </data>
+  <data name="Pet_Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Pet_Sterilised" xml:space="preserve">
+    <value>Sterilised</value>
+  </data>
+  <data name="Pet_Title" xml:space="preserve">
+    <value>Pets</value>
+  </data>
+  <data name="Pet_Vaccines" xml:space="preserve">
+    <value>Vaccines</value>
+  </data>
+  <data name="Pet_Vaccine_Brand" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="Pet_Vaccine_Date" xml:space="preserve">
+    <value>Vaccination</value>
+  </data>
+  <data name="Pet_Vaccine_Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="RegistoAnuladoSucesso" xml:space="preserve">
+    <value>Record successfully deleted</value>
+  </data>
+  <data name="RegistoCriadoSucesso" xml:space="preserve">
+    <value>Record successfully inserted.</value>
+  </data>
+  <data name="RegistoGravadoSucesso" xml:space="preserve">
+    <value>Record successfully updated</value>
+  </data>
+  <data name="Sim" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="TituloContactos" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="SuccessDelete" xml:space="preserve">
+    <value>Record deleted successfully</value>
+  </data>
+  <data name="SuccessInsert" xml:space="preserve">
+    <value>Record Inserted successfully</value>
+  </data>
+  <data name="SuccessUpdate" xml:space="preserve">
+    <value>Record Updated successfully</value>
+  </data>
+  <data name="SuccessUpdates" xml:space="preserve">
+    <value>Update operation terminated with success</value>
+  </data>
+  <data name="TituloDataFim" xml:space="preserve">
+    <value>End date</value>
+  </data>
+  <data name="TituloDataInicio" xml:space="preserve">
+    <value>Starting date</value>
+  </data>
+  <data name="TituloDespesa" xml:space="preserve">
+    <value>Expense</value>
+  </data>
+  <data name="TituloDespesas" xml:space="preserve">
+    <value>Expenses</value>
+  </data>
+  <data name="TituloDespesasPorCategoria" xml:space="preserve">
+    <value>Expenses by Categorie</value>
+  </data>
+  <data name="TituloDespesasTodasDespesas" xml:space="preserve">
+    <value>All the expenses</value>
+  </data>
+  <data name="TituloDoencasCronicas" xml:space="preserve">
+    <value>Chronic Diseases</value>
+  </data>
+  <data name="TituloDtNascimento" xml:space="preserve">
+    <value>Date of Birth</value>
+  </data>
+  <data name="TituloDuracao" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="TituloEspecie" xml:space="preserve">
+    <value>Species</value>
+  </data>
+  <data name="TituloEstado" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TituloFeminino" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="TituloFim" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="TituloFoto" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="TituloGestaoTabelas" xml:space="preserve">
+    <value>Lookup tables</value>
+  </data>
+  <data name="TituloIdiomaIngles" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="TituloIdiomaPortugues" xml:space="preserve">
+    <value>Portuguese</value>
+  </data>
+  <data name="TituloImagem" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="TituloMarca" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="TituloMasculino" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="TituloMedicacao" xml:space="preserve">
+    <value>Medication</value>
+  </data>
+  <data name="TituloNome" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="TituloNotas" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="TituloPadrinho" xml:space="preserve">
+    <value>Godfather</value>
+  </data>
+  <data name="TituloPendente" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="TituloPendentes" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="TituloPrazoEmMeses" xml:space="preserve">
+    <value>Term in months</value>
+  </data>
+  <data name="TituloQtdDiaria" xml:space="preserve">
+    <value>Qty per day</value>
+  </data>
+  <data name="TituloQuantidadeAbr" xml:space="preserve">
+    <value>Qty</value>
+  </data>
+  <data name="TituloSexo" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="TituloSituacao" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TituloTarefa" xml:space="preserve">
+    <value>Task</value>
+  </data>
+  <data name="TituloTemperamento" xml:space="preserve">
+    <value>Temperament</value>
+  </data>
+  <data name="TituloTipoContacto" xml:space="preserve">
+    <value>Contact type</value>
+  </data>
+  <data name="TituloMorada" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="TituloLocalidade" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="TituloMovel" xml:space="preserve">
+    <value>Mobile phone</value>
+  </data>
+  <data name="TituloEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="TituloDoencas" xml:space="preserve">
+    <value>Diseases</value>
+  </data>
+  <data name="TituloPeso" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="TituloCor" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="TituloOutrosDados" xml:space="preserve">
+    <value>Other data</value>
+  </data>
+  <data name="TituloEscolhaEspecie" xml:space="preserve">
+    <value>Select specie</value>
+  </data>
+  <data name="TituloEscolhaSituacao" xml:space="preserve">
+    <value>Select situation</value>
+  </data>
+  <data name="TituloEscolhaTemperamento" xml:space="preserve">
+    <value>Select temperament</value>
+  </data>
+  <data name="TituloEscolhaRaca" xml:space="preserve">
+    <value>Select breed</value>
+  </data>
+  <data name="TituloEscolhaTamanho" xml:space="preserve">
+    <value>Select size</value>
+  </data>
+  <data name="TituloChipado" xml:space="preserve">
+    <value>Microshipped</value>
+  </data>
+  <data name="TituloCodigoChip" xml:space="preserve">
+    <value>Microchip code</value>
+  </data>
+  <data name="TituloDataChip" xml:space="preserve">
+    <value>Chip implantiion</value>
+  </data>
+  <data name="TituloDadosBiograficos" xml:space="preserve">
+    <value>Biographical details</value>
+  </data>
+  <data name="TituloEscolhaImagem" xml:space="preserve">
+    <value>Select a photo</value>
+  </data>
+  <data name="DeleteMsg" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="TituloCompra" xml:space="preserve">
+    <value>Puchase</value>
+  </data>
+  <data name="TituloConsultasVeterinario" xml:space="preserve">
+    <value>Veterinary appointments</value>
+  </data>
+  <data name="TituloMotivo" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="TituloVisita" xml:space="preserve">
+    <value>Visit</value>
+  </data>
+  <data name="TituloExportarPdf" xml:space="preserve">
+    <value>Export to Pdf</value>
+  </data>
+  <data name="TituloFaixaEtaria" xml:space="preserve">
+    <value>Age range</value>
+  </data>
+  <data name="Pet_Vaccine_Name" xml:space="preserve">
+    <value>Vaccine</value>
+  </data>
+  <data name="Pet_Vaccine_Next_Dose" xml:space="preserve">
+    <value>Next vaccination</value>
+  </data>
+  <data name="TituloInicio" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="TituloTarefas" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="TituloSeguranca" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="TituloSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="TituloDocumentos" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="TituloIdiomas" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="TituloSelecionarIdioma" xml:space="preserve">
+    <value>Select language</value>
+  </data>
+  <data name="TituloIdioma" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="TituloLabelIdioma" xml:space="preserve">
+    <value>The change takes effect immediately; restart the application to ensure that all strings are updated.</value>
+  </data>
+  <data name="TituloAplicarIdioma" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Titulo_Main_Info" xml:space="preserve">
+    <value>Select one of the Pets below to view the data.</value>
+  </data>
+  <data name="TituloGaleriaFotos" xml:space="preserve">
+    <value>Photo gallery</value>
+  </data>
+  <data name="TituloIdade" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="TituloEsteAno" xml:space="preserve">
+    <value>This year</value>
+  </data>
+  <data name="TituloEsteMes" xml:space="preserve">
+    <value>This month</value>
+  </data>
+  <data name="TituloTodos" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="TituloMovimento" xml:space="preserve">
+    <value>Transaction</value>
+  </data>
+  <data name="TituloValor" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="TituloCategoria" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="TituloEscolhaTipo" xml:space="preserve">
+    <value>Select type</value>
+  </data>
+  <data name="TituloTipo" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="TituloEscolhaCategoria" xml:space="preserve">
+    <value>Select category</value>
+  </data>
+  <data name="TituloDespesasAgrupadas" xml:space="preserve">
+    <value>Grouped expenses</value>
+  </data>
+  <data name="TituloSemDados" xml:space="preserve">
+    <value>No data to view</value>
+  </data>
+  <data name="TipoVerNoMapa" xml:space="preserve">
+    <value>See on map</value>
+  </data>
+  <data name="TituloVoltar" xml:space="preserve">
+    <value>Go back</value>
+  </data>
+  <data name="TituloEscolhaPet" xml:space="preserve">
+    <value>Select Pet</value>
+  </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="TituloDescricaoOpcional" xml:space="preserve">
+    <value>Description (optional)</value>
+  </data>
+  <data name="Titulo_Titulo" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="TituloEstaSemana" xml:space="preserve">
+    <value>This week</value>
+  </data>
+  <data name="TituloProximaSemana" xml:space="preserve">
+    <value>Next week</value>
+  </data>
+  <data name="TituloProxMes" xml:space="preserve">
+    <value>Next month</value>
+  </data>
+  <data name="TituloTarefas_Todas" xml:space="preserve">
+    <value>All tasks</value>
+  </data>
+  <data name="TituloTarefas_Filtro" xml:space="preserve">
+    <value>Filtered by</value>
+  </data>
+  <data name="TituloPagina_Abrev" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="Titulo_De" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="TituloTarefas_Concluidas" xml:space="preserve">
+    <value>Completed tasks</value>
+  </data>
+  <data name="TituloTarefas_Pendentes" xml:space="preserve">
+    <value>Pending tasks</value>
+  </data>
+  <data name="TituloTarefas_EstaSemana" xml:space="preserve">
+    <value>For this week</value>
+  </data>
+  <data name="TituloTarefas_ProximaSemana" xml:space="preserve">
+    <value>For next week</value>
+  </data>
+  <data name="TituloTarefas_EsteMes" xml:space="preserve">
+    <value>For this month</value>
+  </data>
+  <data name="TituloTarefas_ProximoMes" xml:space="preserve">
+    <value>For next month</value>
+  </data>
+  <data name="TituloDescricao" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="TituloTarefa_Concluida" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="TituloErroValidacao" xml:space="preserve">
+    <value>Validation errors</value>
+  </data>
+  <data name="TituloConfirmacao" xml:space="preserve">
+    <value>Please confirm</value>
+  </data>
+  <data name="TituloConfirmacao_Apagar" xml:space="preserve">
+    <value>Delete record?</value>
+  </data>
+  <data name="TituloBackup" xml:space="preserve">
+    <value>Backup database</value>
+  </data>
+  <data name="TituloRestore" xml:space="preserve">
+    <value>Restore database</value>
+  </data>
+  <data name="TituloInfoBackup" xml:space="preserve">
+    <value>Information about the last backup</value>
+  </data>
+  <data name="Backup_NoBackup" xml:space="preserve">
+    <value>No backups made so far.</value>
+  </data>
+  <data name="Backup_DateLabel" xml:space="preserve">
+    <value>Backup date: </value>
+  </data>
+  <data name="Backup_PathLabel" xml:space="preserve">
+    <value>Path: </value>
+  </data>
+  <data name="Restore_BD_Atual" xml:space="preserve">
+    <value>Current database</value>
+  </data>
+  <data name="Restore_Registos_Alterados" xml:space="preserve">
+    <value>Updated records</value>
+  </data>
+  <data name="Restore_Tabelas" xml:space="preserve">
+    <value>Tables</value>
+  </data>
+  <data name="Restore_Registos" xml:space="preserve">
+    <value>Records</value>
+  </data>
+  <data name="Restore_BD_Selecionada" xml:space="preserve">
+    <value>Selected database</value>
+  </data>
+  <data name="Restore_Botao_Confirmacao" xml:space="preserve">
+    <value>Confirm Restore</value>
+  </data>
+  <data name="ConfirmBackupTitle" xml:space="preserve">
+    <value>Confirm Backup</value>
+  </data>
+  <data name="ConfirmBackupMessage" xml:space="preserve">
+    <value>Do you really want to create a database backup?</value>
+  </data>
+  <data name="BackupCreatedMessageFormat" xml:space="preserve">
+    <value>Backup created at: {0}</value>
+  </data>
+  <data name="NoBackupTitle" xml:space="preserve">
+    <value>No backup</value>
+  </data>
+  <data name="NoBackupMessage" xml:space="preserve">
+    <value>There is no backup file to restore</value>
+  </data>
+  <data name="NoChangesTitle" xml:space="preserve">
+    <value>No changes</value>
+  </data>
+  <data name="NoChangesMessage" xml:space="preserve">
+    <value>The backup has the same number of records in all tables as the current database. No restore is necessary.</value>
+  </data>
+  <data name="RestoreSuccessTitle" xml:space="preserve">
+    <value>Confirm Restore</value>
+  </data>
+  <data name="ConfirmRestoreMessage" xml:space="preserve">
+    <value>his operation will replace the current database with the backup. Do you want to continue?</value>
+  </data>
+  <data name="RestoreSuccessMessage" xml:space="preserve">
+    <value>Database restored successfully!</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="OneTableChangedFormat" xml:space="preserve">
+    <value>1 table changed</value>
+  </data>
+  <data name="MultipleTablesChangedHeader" xml:space="preserve">
+    <value>Several tables changed</value>
+  </data>
+  <data name="ErrorCountingTablesHint" xml:space="preserve">
+    <value>Warning errors occurred while counting some tables (marked as ERR). Check the logs.</value>
+  </data>
+  <data name="NoTableChanged" xml:space="preserve">
+    <value>No table has changed</value>
+  </data>
+  <data name="OneTableChangedHeader" xml:space="preserve">
+    <value>1 table changed</value>
+  </data>
+  <data name="AgeCaption" xml:space="preserve">
+    <value>years)</value>
+  </data>
+  <data name="AgeCaptionInvalid" xml:space="preserve">
+    <value>(Invalid age)</value>
+  </data>
+  <data name="ErroLocalizacaoNaoDisponivel" xml:space="preserve">
+    <value>Location not available</value>
+  </data>
+  <data name="TituloVerificarEntradas" xml:space="preserve">
+    <value>Check entries, please</value>
+  </data>
+  <data name="TituloSelecionarPdf" xml:space="preserve">
+    <value>Select Pdf</value>
+  </data>
+  <data name="TituloIndiqueTitulo" xml:space="preserve">
+    <value>Enter a title for the document</value>
+  </data>
+  <data name="TituloFicheiroInexistente" xml:space="preserve">
+    <value>Temporary file does not exist. Please select again.</value>
+  </data>
+  <data name="TituloErroUpdate" xml:space="preserve">
+    <value>Update error</value>
+  </data>
+  <data name="TituloErroInsert" xml:space="preserve">
+    <value>Insert error</value>
+  </data>
+  <data name="TituloEntradasEmFalta" xml:space="preserve">
+    <value>Please fill in the required fields.</value>
+  </data>
+  <data name="TituloAssuntoEMail" xml:space="preserve">
+    <value>Message from the Maui Pets App / Logs</value>
+  </data>
+  <data name="TituloDataFuturo" xml:space="preserve">
+    <value>Date in the future</value>
+  </data>
+  <data name="TituloDescartarNotificacao" xml:space="preserve">
+    <value>Do you wish to dismiss this notification?</value>
+  </data>
+  <data name="TituloRegistosAssociados" xml:space="preserve">
+    <value>Operation not permitted. There are associated records. Please check.</value>
+  </data>
+  <data name="TituloErroDelete" xml:space="preserve">
+    <value>Error deleting record</value>
+  </data>
+  <data name="TituloErroPartilha" xml:space="preserve">
+    <value>Error sharing PDF</value>
+  </data>
+  <data name="TituloFichaDe" xml:space="preserve">
+    <value>Record of</value>
+  </data>
+  <data name="TituloConfiracoesPrincipais" xml:space="preserve">
+    <value>Main settings</value>
+  </data>
+  <data name="TituloTodasVacinas" xml:space="preserve">
+    <value>All Vaccines</value>
+  </data>
+  <data name="TituloTodasConsultas" xml:space="preserve">
+    <value>All consultations</value>
+  </data>
+  <data name="DeviceNotSupported" xml:space="preserve">
+    <value>Your device isn't supported</value>
+  </data>
+  <data name="Titulo_NoPets" xml:space="preserve">
+    <value>No Pets in the database</value>
+  </data>
+  <data name="TituloProjetos" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="Intro_OQueAvaliaCalculadora" xml:space="preserve">
+    <value>What does this calculator evaluate?</value>
+  </data>
+  <data name="Intro_Paragrafo_2" xml:space="preserve">
+    <value>This tool estimates the risk of prediabetes based on demographic factors, habits, and simple tests. The results are indicative and do not replace a clinical evaluation.</value>
+  </data>
+  <data name="Intro_Paragrafo_3" xml:space="preserve">
+    <value>Note on accuracy</value>
+  </data>
+  <data name="Intro_Paragrafo_4" xml:space="preserve">
+    <value>Model used</value>
+  </data>
+  <data name="Intro_Paragrafo_5" xml:space="preserve">
+    <value>This application estimates risk using the FINDRISC score. For greater accuracy, enter your Weight (kg) and Height (cm) in the simulation. If you do not provide this information, your BMI will be estimated based on your waist circumference.</value>
+  </data>
+  <data name="Intro_Paragrafo_6" xml:space="preserve">
+    <value>Results are indicative and do not replace medical evaluation.</value>
+  </data>
+  <data name="Intro_Botao_Simulacao" xml:space="preserve">
+    <value>Simulation</value>
+  </data>
+</root>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<popup:Popup
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:popup="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+    xmlns:conv="clr-namespace:PreDiabetes.Converters"
+    xmlns:vm="clr-namespace:PreDiabetes.ViewModels"
+    x:Class="PreDiabetes.Pages.PreDiabetes.ResultPopup"
+    x:DataType="vm:ResultPopupViewModel">
+    <popup:Popup.Resources>
+        <ResourceDictionary>
+            <conv:HexToBrushConverter x:Key="HexToBrush" />
+
+            <Style x:Key="PopupBaseButton" TargetType="Button">
+                <Setter Property="HeightRequest" Value="36" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="Padding" Value="12,6" />
+                <Setter Property="MinimumWidthRequest" Value="84" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="PopupPrimaryButton" TargetType="Button" BasedOn="{StaticResource PopupBaseButton}">
+                <Setter Property="BackgroundColor" Value="#28A745" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderWidth" Value="0" />
+            </Style>
+
+            <Style x:Key="PopupSecondaryButton" TargetType="Button" BasedOn="{StaticResource PopupBaseButton}">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="#2B0B98" />
+                <Setter Property="BorderColor" Value="#2B0B98" />
+                <Setter Property="BorderWidth" Value="1" />
+            </Style>
+
+            <Style x:Key="PopupGhostButton" TargetType="Button" BasedOn="{StaticResource PopupBaseButton}">
+                <Setter Property="BackgroundColor" Value="#C0C0C0" />
+                <Setter Property="TextColor" Value="#000000" />
+                <Setter Property="BorderColor" Value="#2B0B98" />
+                <Setter Property="BorderWidth" Value="1" />
+            </Style>
+        </ResourceDictionary>
+    </popup:Popup.Resources>
+
+    <Grid>
+        <BoxView
+            BackgroundColor="#80000000"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            x:Name="Overlay">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnOverlayTapped" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+
+        <Border
+            x:Name="ContentFrame"
+            Padding="18"
+            Background="{DynamicResource PageBackgroundColor}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="360"
+            Opacity="0"
+            Scale="0.92">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="12">
+                <HorizontalStackLayout Spacing="12" VerticalOptions="Start" HorizontalOptions="Fill">
+                    <Border
+                        WidthRequest="56"
+                        HeightRequest="56"
+                        Background="{Binding IconCircleHex, Converter={StaticResource HexToBrush}}"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="28" />
+                        </Border.StrokeShape>
+                        <Label Text="{Binding IconText}" FontSize="26" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Border>
+
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Fill" Spacing="2">
+                        <Label Text="Resultado" FontAttributes="Bold" FontSize="18" />
+                        <Label Text="{Binding PointsText}" FontSize="14" TextColor="{DynamicResource PrimaryTextColor}" />
+                    </VerticalStackLayout>
+
+                    <Border
+                        Padding="6,4"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        Background="{Binding RiskBadgeHex, Converter={StaticResource HexToBrush}}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8" />
+                        </Border.StrokeShape>
+                        <Label Text="{Binding RiskText}" FontSize="13" TextColor="White" />
+                    </Border>
+                </HorizontalStackLayout>
+
+                <ScrollView HeightRequest="80">
+                    <Label Text="{Binding Message}" FontSize="14" LineBreakMode="WordWrap" TextColor="{DynamicResource SecondaryTextColor}" />
+                </ScrollView>
+
+                <Label Text="IMC" FontAttributes="Bold" FontSize="14" />
+                <Border                    
+                    Background="#F7FBFF" Stroke="{StaticResource BorderLight}" StrokeThickness="1" 
+                    Padding="8" 
+                    Margin="0,-6,0,10">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10" />
+                    </Border.StrokeShape>
+
+                    <HorizontalStackLayout 
+                        Spacing="8" 
+                        IsVisible="{Binding BmiText, Converter={x:Static conv:NullOrEmptyToBoolConverter.Instance}}">
+                        
+                        <Label Text="{Binding BmiIcon}" FontSize="14" VerticalOptions="Center" />
+                        <Label Text="{Binding BmiText}" FontSize="13" TextColor="{Binding BmiColor}" VerticalOptions="Center" />
+                        <Label Text="{Binding BmiCategory}" FontSize="12" TextColor="{Binding BmiColor}" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Border>
+                <Label Text="{Binding StatusText}" FontSize="13" TextColor="{DynamicResource PrimaryTextColor}" IsVisible="{Binding IsStatusVisible}" HorizontalOptions="Center" />
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="End">
+                    <Button Text="🔗  Partilhar" Command="{Binding PartilharCommand}" IsEnabled="{Binding CopyEnabled}" Style="{StaticResource PopupPrimaryButton}" />
+                    <Button Text="📋  Copiar" Command="{Binding CopyCommand}" IsEnabled="{Binding CopyEnabled}" Style="{StaticResource PopupSecondaryButton}" />
+                    <Button Text="✖  Fechar" Command="{Binding CloseCommand}" Style="{StaticResource PopupGhostButton}" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</popup:Popup>

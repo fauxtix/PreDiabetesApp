@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resx="clr-namespace:PreDiabetes.Resources.Languages"
+             x:Class="PreDiabetes.Pages.Languages.LanguageSettingsPage"
+             Title="{resx:Localize Key=TituloIdiomas}">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <!-- opcional: styles -->
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+    <VerticalStackLayout Padding="16" Spacing="12">
+        <Label Text="{resx:Localize Key=TituloSelecionarIdioma}" FontAttributes="Bold" FontSize="16" />
+
+        <Picker ItemsSource="{Binding Languages}"
+           ItemDisplayBinding="{Binding DisplayName}"
+           SelectedItem="{Binding SelectedLanguage}"
+           Title="{resx:Localize Key=TituloIdioma}" />
+
+        <Button Text="{resx:Localize Key=TituloAplicarIdioma}" Command="{Binding ApplyCommand}" />
+
+        <Label Margin="0, 10, 0, 0" 
+               Text="{resx:Localize Key=TituloLabelIdioma}" 
+               FontSize="Small" TextColor="Gray" />
+    </VerticalStackLayout>
+</ContentPage>

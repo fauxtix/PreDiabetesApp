@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:PreDiabetes.ViewModels;assembly=PreDiabetes"
+    xmlns:conv="clr-namespace:PreDiabetes.Converters;assembly=PreDiabetes"
+    x:Class="PreDiabetes.Pages.PreDiabetesPage"
+    x:DataType="vm:PreDiabetesViewModel"
+    Title="Pré-Diabetes"
+    BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <ContentPage.Resources>
+        <conv:InverseBoolConverter x:Key="InverseBoolConverter" />
+        <conv:BmiCategoryToBrushConverter x:Key="BmiCategoryToBrush" />
+
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2B0B98</Color>
+            <Color x:Key="MutedText">#6B6B6B</Color>
+            <Color x:Key="CardBackground">#FFFFFF</Color>
+            <Color x:Key="PageBackgroundColor">#F4F5FA</Color>
+            <Color x:Key="BorderLight">#E6E7F0</Color>
+
+            <Style x:Key="SectionCard" TargetType="Border">
+                <Setter Property="Background" Value="{StaticResource CardBackground}" />
+                <Setter Property="Stroke" Value="{StaticResource BorderLight}" />
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="StrokeShape">
+                    <Setter.Value>
+                        <RoundRectangle CornerRadius="12" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Padding" Value="2" />
+                <Setter Property="Margin" Value="10,2" />
+            </Style>
+
+            <Style x:Key="SectionHeader" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource Primary}" />
+            </Style>
+
+            <Style x:Key="FieldLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="{StaticResource MutedText}" />
+            </Style>
+
+            <Style x:Key="PrimaryButton" TargetType="Button">
+                <Setter Property="Background" Value="#28A745" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HeightRequest" Value="44" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="Margin" Value="10,8" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="8">
+            <Label Text="Avalie o seu risco de pré-diabetes"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource Primary}" />
+
+            <Border Style="{StaticResource SectionCard}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Grupo de Idades" Style="{StaticResource SectionHeader}" />
+                    <Picker SelectedIndex="{Binding AgeIndex, Mode=TwoWay}" Title="Escolha grupo de idades" FontSize="16">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Menos de 35 anos</x:String>
+                                <x:String>35-44 anos</x:String>
+                                <x:String>45-54 anos</x:String>
+                                <x:String>55-64 anos</x:String>
+                                <x:String>65 anos ou mais</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource SectionCard}">
+                <Grid ColumnDefinitions="*,auto" ColumnSpacing="12">
+                    <VerticalStackLayout>
+                        <Label Text="Género" Style="{StaticResource SectionHeader}" />
+                        <Picker SelectedIndex="{Binding GenderIndex, Mode=TwoWay}" Title="Escolha género" FontSize="16">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Feminino</x:String>
+                                    <x:String>Masculino</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout HorizontalOptions="End">
+                        <Label Text="Fumador" Style="{StaticResource SectionHeader}" HorizontalOptions="End" />
+                        <Switch IsToggled="{Binding IsSmoker, Mode=TwoWay}" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Border Style="{StaticResource SectionCard}">
+                <VerticalStackLayout>
+                    <Label Text="Histórico e Exames" Style="{StaticResource SectionHeader}" />
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto, Auto, Auto, Auto" >
+                        <Label Text="Toma medicação para a Hipertensão?" Style="{StaticResource FieldLabel}" VerticalOptions="Center" />
+                        <Switch Grid.Column="1" IsToggled="{Binding HipertensaoMedication, Mode=TwoWay}" HorizontalOptions="End" />
+
+                        <Label Text="Detectou glucose elevada em análises?" Style="{StaticResource FieldLabel}" Grid.Row="1" VerticalOptions="Center"  />
+                        <Switch Grid.Column="1" IsToggled="{Binding GlucoseInTests, Mode=TwoWay}" Grid.Row="1" VerticalOptions="Center"  />
+
+                        <Label Text="Parente próximo com diabetes?" Style="{StaticResource FieldLabel}" Grid.Row="2" VerticalOptions="Center"  />
+                        <Switch Grid.Column="1" IsToggled="{Binding ParenteDiabetes, Mode=TwoWay}" Grid.Row="2" />
+
+                        <Label Text="Dedica 30 minutos diários à atividade física?" Style="{StaticResource FieldLabel}" Grid.Row="3" VerticalOptions="Center"  />
+                        <Switch Grid.Column="1" IsToggled="{Binding AtividadeFisica, Mode=TwoWay}" Grid.Row="3" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource SectionCard}">
+                <VerticalStackLayout>
+                    <Label Text="Consumo de Vegetais / Fruta" Style="{StaticResource SectionHeader}" />
+                    <Label Text="Com que frequência come vegetais e fruta?" Style="{StaticResource FieldLabel}" />
+                    <VerticalStackLayout>
+                        <RadioButton Content="Todos os dias" IsChecked="{Binding VegetaisTodosOsDias, Mode=TwoWay}" GroupName="Veg" />
+                        <RadioButton Content="Por vezes" IsChecked="{Binding VegetaisTodosOsDias, Mode=TwoWay, Converter={StaticResource InverseBoolConverter}}" GroupName="Veg" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource SectionCard}">
+                <VerticalStackLayout>
+                    <Label Text="Largura de Anca" Style="{StaticResource SectionHeader}" />
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <VerticalStackLayout IsVisible="{Binding ShowManWaist}">
+                            <Label Text="Homens" Style="{StaticResource FieldLabel}" />
+                            <Picker SelectedIndex="{Binding ManWaistIndex, Mode=TwoWay}" FontSize="16">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Menos de 94 cm</x:String>
+                                        <x:String>94 - 102 cm</x:String>
+                                        <x:String>Mais de 102 cm</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout IsVisible="{Binding ShowWomanWaist}">
+                            <Label Text="Mulheres" Style="{StaticResource FieldLabel}" />
+                            <Picker SelectedIndex="{Binding WomanWaistIndex, Mode=TwoWay}">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Menos de 80 cm</x:String>
+                                        <x:String>80 - 88 cm</x:String>
+                                        <x:String>Mais de 88 cm</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </VerticalStackLayout>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource SectionCard}">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Peso e Altura" Style="{StaticResource SectionHeader}" />
+                    <Grid ColumnDefinitions="2*,2*,3*" ColumnSpacing="8">
+                        <VerticalStackLayout HorizontalOptions="Fill">
+                            <Label Text="Peso (kg)" Style="{StaticResource FieldLabel}" />
+                            <Entry Text="{Binding WeightKgText}" Placeholder="Ex.: 75" Keyboard="Numeric" HorizontalOptions="Fill" FontSize="14" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" HorizontalOptions="Fill">
+                            <Label Text="Altura (cm)" Style="{StaticResource FieldLabel}" />
+                            <Entry Text="{Binding HeightCmText}" FontSize="14" Placeholder="Ex.: 175" Keyboard="Numeric" HorizontalOptions="Fill" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="2" Margin="0,0,20,0" HorizontalOptions="End" IsVisible="{Binding IsBmiVisible}" VerticalOptions="Center">
+                            <Label Text="IMC" Style="{StaticResource FieldLabel}" HorizontalOptions="End" />
+                            <Label Text="{Binding BmiText}" FontSize="14" TextColor="{Binding BmiColor}" HorizontalOptions="End" />
+                            <Label Text="{Binding BmiCategory}" FontSize="12" TextColor="{Binding BmiColor}" HorizontalOptions="End" />
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Label Text="{Binding ValidationMessage}"
+                           TextColor="Crimson"
+                           FontSize="12"
+                           IsVisible="{Binding HasValidationMessage}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Calcular"
+                    Command="{Binding CalculateCommand}"
+                    Style="{StaticResource PrimaryButton}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
