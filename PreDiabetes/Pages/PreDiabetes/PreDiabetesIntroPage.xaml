@@ -93,7 +93,7 @@
 
             <Label Text="{resx:Localize Key=Intro_Paragrafo_6}" Style="{StaticResource BodyLabel}" HorizontalOptions="Center" Margin="6,2" />
 
-            <Button Text="{resx:Localize Key=BotaoSimulacao}"
+            <Button Text="{resx:Localize Key=Intro_Botao_Simulacao}"
                     Command="{Binding StartSimulationCommand}"
                     Style="{StaticResource PrimaryButton}"
                     AutomationProperties.IsInAccessibleTree="True"
