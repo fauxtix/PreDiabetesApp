@@ -1924,6 +1924,15 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sem nome.
+        /// </summary>
+        public static string TituloSemNome {
+            get {
+                return ResourceManager.GetString("TituloSemNome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Configuração.
         /// </summary>
         public static string TituloSettings {

@@ -813,4 +813,7 @@
   <data name="Tab_Introducao" xml:space="preserve">
     <value>Introdução</value>
   </data>
+  <data name="TituloSemNome" xml:space="preserve">
+    <value>Sem nome</value>
+  </data>
 </root>
