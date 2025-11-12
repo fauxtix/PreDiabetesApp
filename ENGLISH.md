@@ -1,4 +1,4 @@
-# 🩺 **Pre-Diabetes App** Guide
+# 🩺 **Pre-Diabetes** · Modern Guide
 
 > 📢 **What is pre-diabetes?**
 >
@@ -43,3 +43,7 @@
 
 ## 🚀 **How to start in the app**
 - Tap the **Start simulation** button to answer the questionnaire and calculate your pre-diabetes risk.
+
+---
+
+> 🇵🇹 [Versão em português](README.md)
