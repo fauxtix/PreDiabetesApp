@@ -40,15 +40,12 @@ namespace PreDiabetes.ViewModels.Languages
         {
             if (value == null) return;
 
-            // Do not auto-apply during construction
             if (_isInitializing) return;
 
-            // If value matches saved preference, do nothing
             var saved = Preferences.Get(PrefKey, "pt-PT");
             if (saved.StartsWith(value.Culture.Split('-')[0], StringComparison.OrdinalIgnoreCase))
                 return;
 
-            // Apply when user actually changes selection
             _ = ApplyLanguageAsync(value.Culture);
         }
 
