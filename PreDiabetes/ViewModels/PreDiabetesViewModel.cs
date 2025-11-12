@@ -18,12 +18,17 @@ public partial class PreDiabetesViewModel : ObservableObject
         _calculator = calculator;
 
         // sensible defaults - indexes will be clamped after lists load
-        AgeIndex = -1;
-        GenderIndex = -1;
-        ManWaistIndex = -1;
-        WomanWaistIndex = -1;
-        VegetaisTodosOsDias = true;
-        AtividadeFisica = true;
+        AgeIndex = 0;
+        GenderIndex = 0;
+        ManWaistIndex = 0;
+        WomanWaistIndex = 0;
+        VegetaisTodosOsDias = false;
+        AtividadeFisica = false;
+        HipertensaoMedication = false;
+        GlucoseInTests = false;
+        ParenteDiabetes = false;
+        IsSmoker = false;
+
 
         LoadAllLocalizedLists();
     }
@@ -121,10 +126,16 @@ public partial class PreDiabetesViewModel : ObservableObject
         VegetaisOptionNo = !string.IsNullOrWhiteSpace(vegNo) ? vegNo : (twoLetter.Equals("en", System.StringComparison.OrdinalIgnoreCase) ? "Sometimes" : "Por vezes");
 
         // choose defaults (indexes) AFTER collections are filled
-        AgeIndex = ClampIndex(1, AgeGroups);
-        GenderIndex = ClampIndex(1, GenderOptions);
-        ManWaistIndex = ClampIndex(1, ManWaistOptions);
-        WomanWaistIndex = ClampIndex(1, WomanWaistOptions);
+        AgeIndex = ClampIndex(0, AgeGroups);
+        GenderIndex = ClampIndex(0, GenderOptions);
+        ManWaistIndex = ClampIndex(0, ManWaistOptions);
+        WomanWaistIndex = ClampIndex(0, WomanWaistOptions);
+
+        OnPropertyChanged(nameof(AgeIndex));
+        OnPropertyChanged(nameof(GenderIndex));
+        OnPropertyChanged(nameof(ManWaistIndex));
+        OnPropertyChanged(nameof(WomanWaistIndex));
+
     }
 
     static int ClampIndex(int idx, IEnumerable<string>? source)
