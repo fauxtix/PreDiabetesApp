@@ -37,9 +37,9 @@
 - Preencha o questionário 📝
 - Receba a sua pontuação FINDRISC ⭐
 - Veja o seu risco!
-- Obtenha recomendações personalizadas
+- Receba uma mensagem adaptada ao seu resultado
 
 ---
 
-## 🚀 **Comece já!**
-[👉 Iniciar simulação de pré-diabetes](#)
+## 🚀 **Como começar na app**
+- Toque no botão **Iniciar simulação** para responder ao questionário e calcular o seu risco de pré-diabetes.
