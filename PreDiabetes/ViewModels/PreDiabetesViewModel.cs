@@ -18,10 +18,10 @@ public partial class PreDiabetesViewModel : ObservableObject
     [ObservableProperty] private ObservableCollection<string> manWaistOptions = new();
     [ObservableProperty] private ObservableCollection<string> womanWaistOptions = new();
 
-    [ObservableProperty] private string selectedAgeGroup;
-    [ObservableProperty] private string selectedGender;
-    [ObservableProperty] private string selectedManWaist;
-    [ObservableProperty] private string selectedWomanWaist;
+    [ObservableProperty] private string? selectedAgeGroup;
+    [ObservableProperty] private string? selectedGender;
+    [ObservableProperty] private string? selectedManWaist;
+    [ObservableProperty] private string? selectedWomanWaist;
 
     [ObservableProperty] private bool isSmoker;
     [ObservableProperty] private bool hipertensaoMedication;
@@ -69,7 +69,7 @@ public partial class PreDiabetesViewModel : ObservableObject
         GenderOptions.Clear();
         GenderOptions.Add(female);
         GenderOptions.Add(male);
-        SelectedGender = GenderOptions.Count > 0 ? GenderOptions[0] : null;
+        SelectedGender = GenderOptions.Count > 0 ? GenderOptions[0] : string.Empty;
 
         var fallbackPt_Ages = new[] { "Menos de 35 anos", "35-44 anos", "45-54 anos", "55-64 anos", "65 anos ou mais" };
         var fallbackEn_Ages = new[] { "Under 35 years", "35-44 years", "45-54 years", "55-64 years", "65 years or older" };
@@ -227,10 +227,10 @@ public partial class PreDiabetesViewModel : ObservableObject
     [RelayCommand(CanExecute = nameof(CanCalculate))]
     public async Task Calculate()
     {
-        int ageIndex = AgeGroups.IndexOf(SelectedAgeGroup);
-        int genderIndex = GenderOptions.IndexOf(SelectedGender);
-        int manWaistIndex = ManWaistOptions.IndexOf(SelectedManWaist);
-        int womanWaistIndex = WomanWaistOptions.IndexOf(SelectedWomanWaist);
+        int ageIndex = SelectedAgeGroup != null ? AgeGroups.IndexOf(SelectedAgeGroup) : -1;
+        int genderIndex = SelectedGender != null ? GenderOptions.IndexOf(SelectedGender) : -1;
+        int manWaistIndex = SelectedManWaist != null ? ManWaistOptions.IndexOf(SelectedManWaist) : -1;
+        int womanWaistIndex = SelectedWomanWaist != null ? WomanWaistOptions.IndexOf(SelectedWomanWaist) : -1;
 
         double weightKg = 0, heightCm = 0;
         if (!string.IsNullOrWhiteSpace(WeightKgText))
