@@ -122,6 +122,8 @@ public partial class PreDiabetesViewModel : ObservableObject
 
     void ValidateWeightAndHeight()
     {
+
+        // TODO: improve validation logic and messages
         ValidationMessage = string.Empty;
         HasValidationMessage = false;
         BmiText = string.Empty;
