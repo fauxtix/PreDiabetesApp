@@ -826,6 +826,15 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Introdução.
+        /// </summary>
+        public static string Tab_Introducao {
+            get {
+                return ResourceManager.GetString("Tab_Introducao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ver no mapa.
         /// </summary>
         public static string TipoVerNoMapa {

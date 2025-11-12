@@ -64,8 +64,8 @@ public partial class PreDiabetesViewModel : ObservableObject
             catch { return null; }
         }
 
-        var female = AppResources.ResourceManager.GetString("TituloFeminino", culture) ?? AppResources.TituloFeminino ?? "Feminino";
-        var male = AppResources.ResourceManager.GetString("TituloMasculino", culture) ?? AppResources.TituloMasculino ?? "Masculino";
+        var female = AppResources.TituloFeminino;
+        var male = AppResources.TituloMasculino;
         GenderOptions.Clear();
         GenderOptions.Add(female);
         GenderOptions.Add(male);

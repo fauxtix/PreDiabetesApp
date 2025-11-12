@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!-- use a slightly darker gray from your Colors.xaml -->
 <Shell
     x:Class="PreDiabetes.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
     xmlns:resx="clr-namespace:PreDiabetes.Resources.Languages"
-    xmlns:pages="clr-namespace:PreDiabetes.Pages"
     xmlns:prediabetespages="clr-namespace:PreDiabetes.Pages"
     xmlns:languagespages="clr-namespace:PreDiabetes.Pages.Languages"
-    Shell.FlyoutBehavior="Flyout"
-    Title="PreDiabetes">
+    Title="PreDiabetes"
+    >
 
+    <TabBar>
+        <Tab Title="{Binding Source={x:Static resx:AppResources.Tab_Introducao}, StringFormat='📝 {0}'}">
+            <ShellContent
+                Title="{Binding Source={x:Static resx:AppResources.Tab_Introducao}, StringFormat='📝 {0}'}"
+                ContentTemplate="{DataTemplate prediabetespages:PreDiabetesIntroPage}"
+                Route="pre-diabetes-intro" />
+        </Tab>
 
-    <ShellContent
-        Title="Pre diabetes"
-        Icon="{StaticResource IconMeta}"
-        ContentTemplate="{DataTemplate prediabetespages:PreDiabetesIntroPage}"
-        Route="pre-diabetes" />
-    <ShellContent
-                    Title="{resx:Localize Key=TituloIdiomas}" 
-                    Icon="language.png"
-                    ContentTemplate="{DataTemplate languagespages:LanguageSettingsPage}"
-                    Route="LanguageSettingsPage" />
+        <Tab Title="{Binding Source={x:Static resx:AppResources.Btn_Calcular}, StringFormat='🧮 {0}'}">
+            <ShellContent
+                Title="{Binding Source={x:Static resx:AppResources.Btn_Calcular}, StringFormat='🧮 {0}'}"
+                ContentTemplate="{DataTemplate prediabetespages:PreDiabetesPage}"
+                Route="pre-diabetes" />
+        </Tab>
+
+        <Tab Title="{Binding Source={x:Static resx:AppResources.TituloIdioma}, StringFormat='🌐 {0}'}">
+            <ShellContent
+                Title="{Binding Source={x:Static resx:AppResources.TituloIdioma}, StringFormat='🌐 {0}'}"
+                ContentTemplate="{DataTemplate languagespages:LanguageSettingsPage}"
+                Route="LanguageSettingsPage" />
+        </Tab>
+    </TabBar>
 </Shell>

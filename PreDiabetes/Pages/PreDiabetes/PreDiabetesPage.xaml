@@ -6,7 +6,7 @@
     xmlns:conv="clr-namespace:PreDiabetes.Converters;assembly=PreDiabetes"
     xmlns:resx="clr-namespace:PreDiabetes.Resources.Languages"
     x:Class="PreDiabetes.Pages.PreDiabetesPage"
-    x:DataType="vm:PreDiabetesIntroViewModel"
+    x:DataType="vm:PreDiabetesViewModel"
     Title="{resx:Localize Key=TituloFormulario}"
     BackgroundColor="{StaticResource PageBackgroundColor}">
 
