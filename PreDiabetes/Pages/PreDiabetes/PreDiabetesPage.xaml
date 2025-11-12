@@ -61,27 +61,28 @@
         <VerticalStackLayout Padding="10" Spacing="8">
             <Label Text="{resx:Localize Key=TituloSimulacao}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
 
+            <!-- Age Group Picker -->
             <Border Style="{StaticResource SectionCard}">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="{resx:Localize Key=Simulacao_GrupoIdades}" Style="{StaticResource SectionHeader}" />
                     <Picker
-                        SelectedIndex="{Binding AgeIndex, Mode=TwoWay}"
-                        FontSize="16"
-                        ItemsSource="{Binding AgeGroups}" />
+                        ItemsSource="{Binding AgeGroups}"
+                        SelectedItem="{Binding SelectedAgeGroup, Mode=TwoWay}"
+                        FontSize="16" />
                 </VerticalStackLayout>
             </Border>
 
+            <!-- Gender Picker and Smoker Switch -->
             <Border Style="{StaticResource SectionCard}">
                 <Grid ColumnDefinitions="*,Auto" ColumnSpacing="24">
                     <VerticalStackLayout>
                         <Label Text="{resx:Localize Key=TituloSexo}" Style="{StaticResource SectionHeader}" />
                         <Picker
-                            SelectedIndex="{Binding GenderIndex, Mode=TwoWay}"
-                            FontSize="16"
-                            ItemsSource="{Binding GenderOptions}" />
+                            ItemsSource="{Binding GenderOptions}"
+                            SelectedItem="{Binding SelectedGender, Mode=TwoWay}"
+                            FontSize="16" />
                     </VerticalStackLayout>
 
-                    <!-- put the whole stack in column 1 (attached property must be on the direct child) -->
                     <VerticalStackLayout Margin="10, 0, 0, 10" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" Spacing="6">
                         <Label Text="{resx:Localize Key=Simulacao_Fumador}" Style="{StaticResource SectionHeader}" HorizontalOptions="End" />
                         <Switch IsToggled="{Binding IsSmoker, Mode=TwoWay}" HorizontalOptions="End" />
@@ -89,6 +90,7 @@
                 </Grid>
             </Border>
 
+            <!-- Medication, Glucose, Family Diabetes, Activity -->
             <Border Style="{StaticResource SectionCard}">
                 <VerticalStackLayout>
                     <Label Text="{resx:Localize Key=Simulacao_HitoricoExames_Titulo}" Style="{StaticResource SectionHeader}" />
@@ -108,6 +110,7 @@
                 </VerticalStackLayout>
             </Border>
 
+            <!-- Vegetables Radio Group -->
             <Border Style="{StaticResource SectionCard}">
                 <VerticalStackLayout>
                     <Label Text="{resx:Localize Key=Simulacao_Vegetais_Label}" Style="{StaticResource FieldLabel}" />
@@ -118,30 +121,32 @@
                 </VerticalStackLayout>
             </Border>
 
+            <!-- Waist Pickers - Conditional -->
             <Border Style="{StaticResource SectionCard}">
                 <VerticalStackLayout>
                     <Label Text="{resx:Localize Key=Simulacao_Anca_Titulo}" Style="{StaticResource SectionHeader}" />
                     <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
-                        <!-- Anca - Homens -->
+                        <!-- Man Waist -->
                         <VerticalStackLayout IsVisible="{Binding ShowManWaist}">
                             <Label Text="{resx:Localize Key=TituloMasculinos}" Style="{StaticResource FieldLabel}" />
                             <Picker
-                                SelectedIndex="{Binding ManWaistIndex, Mode=TwoWay}"
-                                FontSize="16"
-                                ItemsSource="{Binding ManWaistOptions}" />
+                                ItemsSource="{Binding ManWaistOptions}"
+                                SelectedItem="{Binding SelectedManWaist, Mode=TwoWay}"
+                                FontSize="16" />
                         </VerticalStackLayout>
-
-                        <!-- Anca - Mulheres -->
+                        <!-- Woman Waist -->
                         <VerticalStackLayout IsVisible="{Binding ShowWomanWaist}">
                             <Label Text="{resx:Localize Key=TituloFemininos}" Style="{StaticResource FieldLabel}" />
                             <Picker
-                                SelectedIndex="{Binding WomanWaistIndex, Mode=TwoWay}"
-                                ItemsSource="{Binding WomanWaistOptions}" />
+                                ItemsSource="{Binding WomanWaistOptions}"
+                                SelectedItem="{Binding SelectedWomanWaist, Mode=TwoWay}"
+                                FontSize="16" />
                         </VerticalStackLayout>
                     </Grid>
                 </VerticalStackLayout>
             </Border>
 
+            <!-- Weight/Height/BMI UI -->
             <Border Style="{StaticResource SectionCard}">
                 <VerticalStackLayout Spacing="6">
                     <Label Text="{resx:Localize Key=TituloPesoAltura}" Style="{StaticResource SectionHeader}" />

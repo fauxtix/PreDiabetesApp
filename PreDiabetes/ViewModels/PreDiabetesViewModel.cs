@@ -13,37 +13,16 @@ public partial class PreDiabetesViewModel : ObservableObject
 {
     private readonly IPreDiabetesCalculatorService _calculator;
 
-    public PreDiabetesViewModel(IPreDiabetesCalculatorService calculator)
-    {
-        _calculator = calculator;
-
-        // sensible defaults - indexes will be clamped after lists load
-        AgeIndex = 0;
-        GenderIndex = 0;
-        ManWaistIndex = 0;
-        WomanWaistIndex = 0;
-        VegetaisTodosOsDias = false;
-        AtividadeFisica = false;
-        HipertensaoMedication = false;
-        GlucoseInTests = false;
-        ParenteDiabetes = false;
-        IsSmoker = false;
-
-
-        LoadAllLocalizedLists();
-    }
-
-    // lists exposed to XAML as ObservableCollection so UI updates without manual property notification
     [ObservableProperty] private ObservableCollection<string> ageGroups = new();
     [ObservableProperty] private ObservableCollection<string> genderOptions = new();
     [ObservableProperty] private ObservableCollection<string> manWaistOptions = new();
     [ObservableProperty] private ObservableCollection<string> womanWaistOptions = new();
 
-    // Selected indexes / inputs — use indexes as single source of truth
-    [ObservableProperty] private int ageIndex;
-    [ObservableProperty] private int genderIndex;
-    [ObservableProperty] private int manWaistIndex;
-    [ObservableProperty] private int womanWaistIndex;
+    [ObservableProperty] private string selectedAgeGroup;
+    [ObservableProperty] private string selectedGender;
+    [ObservableProperty] private string selectedManWaist;
+    [ObservableProperty] private string selectedWomanWaist;
+
     [ObservableProperty] private bool isSmoker;
     [ObservableProperty] private bool hipertensaoMedication;
     [ObservableProperty] private bool glucoseInTests;
@@ -53,7 +32,6 @@ public partial class PreDiabetesViewModel : ObservableObject
     [ObservableProperty] private string weightKgText = string.Empty;
     [ObservableProperty] private string heightCmText = string.Empty;
 
-    // BMI UI fields
     [ObservableProperty] private string bmiText = string.Empty;
     [ObservableProperty] private bool isBmiVisible;
     [ObservableProperty] private string bmiCategory = string.Empty;
@@ -62,15 +40,19 @@ public partial class PreDiabetesViewModel : ObservableObject
     [ObservableProperty] private string validationMessage = string.Empty;
     [ObservableProperty] private bool hasValidationMessage;
 
-    // vegetable options as observable properties (localizable)
     [ObservableProperty] private string vegetaisOptionYes = "Todos os dias";
     [ObservableProperty] private string vegetaisOptionNo = "Por vezes";
 
-    // ---------- Localization / lists ----------
+    public PreDiabetesViewModel(IPreDiabetesCalculatorService calculator)
+    {
+        _calculator = calculator;
+        LoadAllLocalizedLists();
+    }
+
     void LoadAllLocalizedLists()
     {
         var twoLetter = CultureInfo.CurrentUICulture?.TwoLetterISOLanguageName
-                        ?? CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+            ?? CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
 
         CultureInfo culture;
         try { culture = new CultureInfo(twoLetter); }
@@ -82,14 +64,13 @@ public partial class PreDiabetesViewModel : ObservableObject
             catch { return null; }
         }
 
-        // Gender options
         var female = AppResources.ResourceManager.GetString("TituloFeminino", culture) ?? AppResources.TituloFeminino ?? "Feminino";
         var male = AppResources.ResourceManager.GetString("TituloMasculino", culture) ?? AppResources.TituloMasculino ?? "Masculino";
         GenderOptions.Clear();
         GenderOptions.Add(female);
         GenderOptions.Add(male);
+        SelectedGender = GenderOptions.Count > 0 ? GenderOptions[0] : null;
 
-        // Age groups
         var fallbackPt_Ages = new[] { "Menos de 35 anos", "35-44 anos", "45-54 anos", "55-64 anos", "65 anos ou mais" };
         var fallbackEn_Ages = new[] { "Under 35 years", "35-44 years", "45-54 years", "55-64 years", "65 years or older" };
         var rawAges = TryGet("Simulacao_GrupoIdades_Itens");
@@ -99,65 +80,43 @@ public partial class PreDiabetesViewModel : ObservableObject
 
         AgeGroups.Clear();
         foreach (var a in ages) AgeGroups.Add(a);
+        SelectedAgeGroup = AgeGroups.Count > 0 ? AgeGroups[0] : null;
 
-        // Man/Woman waist options
         var fallbackPt_ManWaist = new[] { "Menos de 94 cm", "94 - 102 cm", "Mais de 102 cm" };
         var fallbackEn_ManWaist = new[] { "Under 94 cm", "94 - 102 cm", "Over 102 cm" };
         var rawMan = TryGet("Simulacao_AncaHomens_Itens");
-        var man = !string.IsNullOrWhiteSpace(rawMan) ? rawMan.Split(';', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToArray()
+        var manWaist = !string.IsNullOrWhiteSpace(rawMan)
+            ? rawMan.Split(';', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToArray()
             : (twoLetter.Equals("en", System.StringComparison.OrdinalIgnoreCase) ? fallbackEn_ManWaist : fallbackPt_ManWaist);
 
         ManWaistOptions.Clear();
-        foreach (var v in man) ManWaistOptions.Add(v);
+        foreach (var v in manWaist) ManWaistOptions.Add(v);
+        SelectedManWaist = ManWaistOptions.Count > 0 ? ManWaistOptions[0] : null;
 
         var fallbackPt_WomanWaist = new[] { "Menos de 80 cm", "80 - 88 cm", "Mais de 88 cm" };
         var fallbackEn_WomanWaist = new[] { "Under 80 cm", "80 - 88 cm", "Over 88 cm" };
         var rawWoman = TryGet("Simulacao_AncaMulheres_Itens");
-        var woman = !string.IsNullOrWhiteSpace(rawWoman) ? rawWoman.Split(';', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToArray()
+        var womanWaist = !string.IsNullOrWhiteSpace(rawWoman)
+            ? rawWoman.Split(';', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToArray()
             : (twoLetter.Equals("en", System.StringComparison.OrdinalIgnoreCase) ? fallbackEn_WomanWaist : fallbackPt_WomanWaist);
 
         WomanWaistOptions.Clear();
-        foreach (var v in woman) WomanWaistOptions.Add(v);
+        foreach (var v in womanWaist) WomanWaistOptions.Add(v);
+        SelectedWomanWaist = WomanWaistOptions.Count > 0 ? WomanWaistOptions[0] : null;
 
-        // Vegetables options if present
         var vegYes = TryGet("Simulacao_Vegetais_Opcao1");
         var vegNo = TryGet("Simulacao_Vegetais_Opcao2");
-        VegetaisOptionYes = !string.IsNullOrWhiteSpace(vegYes) ? vegYes : (twoLetter.Equals("en", System.StringComparison.OrdinalIgnoreCase) ? "Every day" : "Todos os dias");
-        VegetaisOptionNo = !string.IsNullOrWhiteSpace(vegNo) ? vegNo : (twoLetter.Equals("en", System.StringComparison.OrdinalIgnoreCase) ? "Sometimes" : "Por vezes");
-
-        // choose defaults (indexes) AFTER collections are filled
-        AgeIndex = ClampIndex(0, AgeGroups);
-        GenderIndex = ClampIndex(0, GenderOptions);
-        ManWaistIndex = ClampIndex(0, ManWaistOptions);
-        WomanWaistIndex = ClampIndex(0, WomanWaistOptions);
-
-        OnPropertyChanged(nameof(AgeIndex));
-        OnPropertyChanged(nameof(GenderIndex));
-        OnPropertyChanged(nameof(ManWaistIndex));
-        OnPropertyChanged(nameof(WomanWaistIndex));
-
+        VegetaisOptionYes = !string.IsNullOrWhiteSpace(vegYes)
+            ? vegYes
+            : (twoLetter.Equals("en", System.StringComparison.OrdinalIgnoreCase) ? "Every day" : "Todos os dias");
+        VegetaisOptionNo = !string.IsNullOrWhiteSpace(vegNo)
+            ? vegNo
+            : (twoLetter.Equals("en", System.StringComparison.OrdinalIgnoreCase) ? "Sometimes" : "Por vezes");
     }
 
-    static int ClampIndex(int idx, IEnumerable<string>? source)
-    {
-        var count = source?.Count() ?? 0;
-        if (count == 0) return 0;
-        if (idx < 0 || idx >= count) return 0;
-        return idx;
-    }
+    public bool ShowManWaist => SelectedGender == GenderOptions.LastOrDefault();
+    public bool ShowWomanWaist => SelectedGender == GenderOptions.FirstOrDefault();
 
-    // computed UI helpers
-    public bool ShowManWaist => GenderIndex == 1;
-    public bool ShowWomanWaist => GenderIndex == 0;
-
-    // generated setter hook for GenderIndex -> notify dependent computed properties
-    partial void OnGenderIndexChanged(int value)
-    {
-        OnPropertyChanged(nameof(ShowManWaist));
-        OnPropertyChanged(nameof(ShowWomanWaist));
-    }
-
-    // when weight/height change, validate and update BMI UI
     partial void OnWeightKgTextChanged(string value) => ValidateWeightAndHeight();
     partial void OnHeightCmTextChanged(string value) => ValidateWeightAndHeight();
 
@@ -178,11 +137,11 @@ public partial class PreDiabetesViewModel : ObservableObject
 
         var culture = CultureInfo.CurrentCulture;
         double weight = 0, height = 0;
-        if (!string.IsNullOrWhiteSpace(WeightKgText) && !double.TryParse(WeightKgText.Trim(), System.Globalization.NumberStyles.Number, culture, out weight))
+        if (!string.IsNullOrWhiteSpace(WeightKgText) && !double.TryParse(WeightKgText.Trim(), NumberStyles.Number, culture, out weight))
         {
             ValidationMessage = "Peso inválido. Use apenas números (ex.: 75).";
         }
-        else if (!string.IsNullOrWhiteSpace(HeightCmText) && !double.TryParse(HeightCmText.Trim(), System.Globalization.NumberStyles.Number, culture, out height))
+        else if (!string.IsNullOrWhiteSpace(HeightCmText) && !double.TryParse(HeightCmText.Trim(), NumberStyles.Number, culture, out height))
         {
             ValidationMessage = "Altura inválida. Use apenas números (ex.: 175).";
         }
@@ -221,7 +180,6 @@ public partial class PreDiabetesViewModel : ObservableObject
     }
 
     private enum BmiSeverity { VeryLow, Low, Normal, High, VeryHigh }
-
     private string GetLocalizedBmiCategory(BmiSeverity severity)
     {
         var key = severity switch
@@ -239,7 +197,7 @@ public partial class PreDiabetesViewModel : ObservableObject
             var localized = AppResources.ResourceManager.GetString(key, CultureInfo.CurrentUICulture);
             if (!string.IsNullOrWhiteSpace(localized)) return localized!;
         }
-        catch { /* ignore */ }
+        catch { }
 
         var twoLetter = (CultureInfo.CurrentUICulture ?? CultureInfo.CurrentCulture).TwoLetterISOLanguageName;
         var en = twoLetter.Equals("en", System.StringComparison.OrdinalIgnoreCase);
@@ -254,7 +212,6 @@ public partial class PreDiabetesViewModel : ObservableObject
             _ => en ? "Unknown" : "Desconhecido"
         };
     }
-
     private Color GetBmiColor(BmiSeverity severity) => severity switch
     {
         BmiSeverity.VeryLow => Color.FromArgb("#5D6D7E"),
@@ -268,21 +225,25 @@ public partial class PreDiabetesViewModel : ObservableObject
     private bool CanCalculate() => !HasValidationMessage;
 
     [RelayCommand(CanExecute = nameof(CanCalculate))]
-    private Task Calculate()
+    public async Task Calculate()
     {
-        double weightKg = 0;
-        double heightCm = 0;
+        int ageIndex = AgeGroups.IndexOf(SelectedAgeGroup);
+        int genderIndex = GenderOptions.IndexOf(SelectedGender);
+        int manWaistIndex = ManWaistOptions.IndexOf(SelectedManWaist);
+        int womanWaistIndex = WomanWaistOptions.IndexOf(SelectedWomanWaist);
+
+        double weightKg = 0, heightCm = 0;
         if (!string.IsNullOrWhiteSpace(WeightKgText))
-            double.TryParse(WeightKgText.Trim(), System.Globalization.NumberStyles.Number, CultureInfo.CurrentCulture, out weightKg);
+            double.TryParse(WeightKgText.Trim(), NumberStyles.Number, CultureInfo.CurrentCulture, out weightKg);
         if (!string.IsNullOrWhiteSpace(HeightCmText))
-            double.TryParse(HeightCmText.Trim(), System.Globalization.NumberStyles.Number, CultureInfo.CurrentCulture, out heightCm);
+            double.TryParse(HeightCmText.Trim(), NumberStyles.Number, CultureInfo.CurrentCulture, out heightCm);
 
         var input = new PreDiabetesInput
         {
-            AgeIndex = AgeIndex,
-            GenderIndex = GenderIndex,
-            ManWaistIndex = ManWaistIndex,
-            WomanWaistIndex = WomanWaistIndex,
+            AgeIndex = ageIndex,
+            GenderIndex = genderIndex,
+            ManWaistIndex = manWaistIndex,
+            WomanWaistIndex = womanWaistIndex,
             IsSmoker = IsSmoker,
             HipertensaoMedication = HipertensaoMedication,
             GlucoseInTests = GlucoseInTests,
@@ -303,6 +264,6 @@ public partial class PreDiabetesViewModel : ObservableObject
 
         host?.ShowPopup(popup);
 
-        return Task.CompletedTask;
+        await Task.CompletedTask;
     }
 }
