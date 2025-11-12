@@ -8,7 +8,7 @@
 
 ## 🎯 **Por que devo conhecer o risco?**
 - Conhecer o risco permite evitar doenças e melhorar a qualidade de vida.
-- Adoptar mudanças previne complicações futuras.
+- Adoptar mudanças previne complicações futuras. ❤️‍🩹
 
 ---
 
@@ -25,21 +25,21 @@
 ---
 
 ## 🆕 **Recomendações actuais**
-- **Alimente-se bem:** privilegie legumes, fruta e produtos integrais.
-- **Mantenha-se activo:** pelo menos 30 minutos por dia.
-- **Monitore peso e cintura**
-- **Não fume**
-- **Faça exames de check-up regulares**
+- ✔️ **Alimente-se bem:** 🍎 privilegie legumes, fruta e produtos integrais.
+- ✔️ **Mantenha-se activo:** pelo menos 30 minutos por dia 🏃.
+- ✔️ **Monitore peso e cintura** ⚖️ 📏
+- ✔️ **Não fume** 🚭
+- ✔️ **Faça exames de check-up regulares** 🩺
 
 ---
 
 ## 🔍 **Como funciona a calculadora?**
-- Preencha o questionário
-- Receba a sua pontuação FINDRISC
+- Preencha o questionário 📝
+- Receba a sua pontuação FINDRISC ⭐
 - Veja o seu risco!
 - Obtenha recomendações personalizadas
 
 ---
 
 ## 🚀 **Comece já!**
-[Iniciar simulação de pré-diabetes](#)
+[👉 Iniciar simulação de pré-diabetes](#)
