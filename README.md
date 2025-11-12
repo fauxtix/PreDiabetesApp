@@ -1,5 +1,7 @@
 # 🩺 **Pré-Diabetes App** - Guia
 
+> 🇬🇧 [English version](ENGLISH.md)
+
 > 📢 **O que é a pré-diabetes?**
 >
 > Pré-diabetes é uma condição silenciosa em que o açúcar no sangue está acima do valor considerado normal, mas ainda abaixo do limiar para o diagnóstico de diabetes. Esta condição **é reversível** com hábitos saudáveis.
@@ -45,5 +47,7 @@
 - Toque no botão **Iniciar simulação** para responder ao questionário e calcular o seu risco de pré-diabetes.
 
 ---
-
-> 🇬🇧 [English version](ENGLISH.md)
+<img width="389" height="791" alt="Introduction" src="https://github.com/user-attachments/assets/754c7e33-eb5b-4b4e-b45c-0150c6bc0f6a" />
+<img width="388" height="785" alt="Form" src="https://github.com/user-attachments/assets/fbad482c-4c7e-4de5-96f3-97f3e7f417c4" />
+<img width="384" height="789" alt="Result" src="https://github.com/user-attachments/assets/c956d81a-07ed-47d9-9be0-8672ac319b9b" />
+<img width="386" height="790" alt="Languages" src="https://github.com/user-attachments/assets/b17a8ed9-b54d-4cd9-9da3-20e7b3b72db2" />
