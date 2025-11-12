@@ -102,7 +102,6 @@
                     <Label Text="{Binding Message}" FontSize="14" LineBreakMode="WordWrap" TextColor="{DynamicResource SecondaryTextColor}" />
                 </ScrollView>
 
-                <!-- IMC section: only visible when BmiText is set -->
                 <Label Text="{resx:Localize Key=TituloIMC}" FontAttributes="Bold" FontSize="14"
                        IsVisible="{Binding BmiText, Converter={x:Static conv:NullOrEmptyToBoolConverter.Instance}}" />
                 <Border                    

@@ -7,7 +7,7 @@
     xmlns:resx="clr-namespace:PreDiabetes.Resources.Languages"
     x:Class="PreDiabetes.Pages.PreDiabetesIntroPage"
     x:DataType="vm:PreDiabetesIntroViewModel"
-    Title="{Binding Title}"
+    Title="{resx:Localize Key=AppTitle}"
     BackgroundColor="{StaticResource PageBackgroundColor}">
 
     <ContentPage.Resources>

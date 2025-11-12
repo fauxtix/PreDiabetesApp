@@ -6,8 +6,8 @@
     xmlns:conv="clr-namespace:PreDiabetes.Converters;assembly=PreDiabetes"
     xmlns:resx="clr-namespace:PreDiabetes.Resources.Languages"
     x:Class="PreDiabetes.Pages.PreDiabetesPage"
-    x:DataType="vm:PreDiabetesViewModel"
-    Title="Pré-Diabetes"
+    x:DataType="vm:PreDiabetesIntroViewModel"
+    Title="{resx:Localize Key=TituloFormulario}"
     BackgroundColor="{StaticResource PageBackgroundColor}">
 
     <ContentPage.Resources>
@@ -61,7 +61,6 @@
         <VerticalStackLayout Padding="10" Spacing="8">
             <Label Text="{resx:Localize Key=TituloSimulacao}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
 
-            <!-- Age Group Picker -->
             <Border Style="{StaticResource SectionCard}" HeightRequest="90">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="{resx:Localize Key=Simulacao_GrupoIdades}" Style="{StaticResource SectionHeader}" />
@@ -72,7 +71,6 @@
                 </VerticalStackLayout>
             </Border>
 
-            <!-- Gender Picker and Smoker Switch -->
             <Border Style="{StaticResource SectionCard}" HeightRequest="80">
                 <Grid ColumnDefinitions="*,Auto" ColumnSpacing="24">
                     <VerticalStackLayout>
@@ -90,7 +88,6 @@
                 </Grid>
             </Border>
 
-            <!-- Medication, Glucose, Family Diabetes, Activity -->
             <Border Style="{StaticResource SectionCard}">
                 <VerticalStackLayout Spacing="2">
                     <Label Text="{resx:Localize Key=Simulacao_HitoricoExames_Titulo}" Style="{StaticResource SectionHeader}" />
@@ -109,7 +106,7 @@
                     </Grid>
                 </VerticalStackLayout>
             </Border>
-            <!-- Vegetables Radio Group -->
+
             <Border Style="{StaticResource SectionCard}">
                 <VerticalStackLayout>
                     <Label Text="{resx:Localize Key=Simulacao_Vegetais_Label}" Style="{StaticResource FieldLabel}" />
@@ -120,12 +117,10 @@
                 </VerticalStackLayout>
             </Border>
 
-            <!-- Waist Pickers - Conditional -->
             <Border Style="{StaticResource SectionCard}">
                 <VerticalStackLayout>
                     <Label Text="{resx:Localize Key=Simulacao_Anca_Titulo}" Style="{StaticResource SectionHeader}" />
                     <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
-                        <!-- Man Waist -->
                         <VerticalStackLayout IsVisible="{Binding ShowManWaist}">
                             <Label Text="{resx:Localize Key=TituloMasculinos}" Style="{StaticResource FieldLabel}" />
                             <Picker
@@ -133,7 +128,6 @@
                                 SelectedItem="{Binding SelectedManWaist, Mode=TwoWay}"
                                 FontSize="16" />
                         </VerticalStackLayout>
-                        <!-- Woman Waist -->
                         <VerticalStackLayout IsVisible="{Binding ShowWomanWaist}">
                             <Label Text="{resx:Localize Key=TituloFemininos}" Style="{StaticResource FieldLabel}" />
                             <Picker
@@ -145,7 +139,6 @@
                 </VerticalStackLayout>
             </Border>
 
-            <!-- Weight/Height/BMI UI -->
             <Border Style="{StaticResource SectionCard}">
                 <VerticalStackLayout Spacing="6">
                     <Label Text="{resx:Localize Key=TituloPesoAltura}" Style="{StaticResource SectionHeader}" />

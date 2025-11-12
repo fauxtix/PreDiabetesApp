@@ -63,7 +63,6 @@ public class PreDiabetesCalculatorService : IPreDiabetesCalculatorService
 
     private static (string Message, string Rotulo) ObterMensagemFindrisc(int total)
     {
-        // Detect language: "pt" for Portuguese; default to English if not pt
         var twoLetter = (CultureInfo.CurrentUICulture ?? CultureInfo.CurrentCulture).TwoLetterISOLanguageName;
         var isPt = twoLetter.Equals("pt", StringComparison.OrdinalIgnoreCase);
 

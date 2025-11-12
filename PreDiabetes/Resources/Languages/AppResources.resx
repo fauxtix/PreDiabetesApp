@@ -804,4 +804,10 @@
   <data name="TituloFalhaAoCopiar" xml:space="preserve">
     <value>Falha ao copiar para o Clpboard</value>
   </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Calculadora de Pré-Diabetes</value>
+  </data>
+  <data name="TituloFormulario" xml:space="preserve">
+    <value>Formulário</value>
+  </data>
 </root>

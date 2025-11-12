@@ -4,11 +4,6 @@
              xmlns:resx="clr-namespace:PreDiabetes.Resources.Languages"
              x:Class="PreDiabetes.Pages.Languages.LanguageSettingsPage"
              Title="{resx:Localize Key=TituloIdiomas}">
-  <ContentPage.Resources>
-    <ResourceDictionary>
-      <!-- opcional: styles -->
-    </ResourceDictionary>
-  </ContentPage.Resources>
 
     <VerticalStackLayout Padding="16" Spacing="12">
         <Label Text="{resx:Localize Key=TituloSelecionarIdioma}" FontAttributes="Bold" FontSize="16" />

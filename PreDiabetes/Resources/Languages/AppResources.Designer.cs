@@ -79,6 +79,15 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Calculadora de Pré-Diabetes.
+        /// </summary>
+        public static string AppTitle {
+            get {
+                return ResourceManager.GetString("AppTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data do backup: .
         /// </summary>
         public static string Backup_DateLabel {
@@ -1443,6 +1452,15 @@ namespace PreDiabetes.Resources.Languages {
         public static string TituloFim {
             get {
                 return ResourceManager.GetString("TituloFim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Formulário.
+        /// </summary>
+        public static string TituloFormulario {
+            get {
+                return ResourceManager.GetString("TituloFormulario", resourceCulture);
             }
         }
         
