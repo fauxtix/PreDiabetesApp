@@ -1,4 +1,4 @@
-# 🩺 **Pre-Diabetes** · Modern Guide
+# 🩺 **Pre-Diabetes App** Guide
 
 > 📢 **What is pre-diabetes?**
 >
