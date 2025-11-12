@@ -72,7 +72,7 @@
             </Border>
 
             <Border Style="{StaticResource SectionCard}" HeightRequest="80">
-                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="E">
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="20">
                     <VerticalStackLayout>
                         <Label Text="{resx:Localize Key=TituloSexo}" Style="{StaticResource SectionHeader}" />
                         <Picker
