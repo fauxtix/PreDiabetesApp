@@ -47,7 +47,7 @@
 - Toque no botão **Iniciar simulação** para responder ao questionário e calcular o seu risco de pré-diabetes.
 
 ---
-<img width="389" height="791" alt="Introduction" src="https://github.com/user-attachments/assets/7dca034e-ba13-44c6-8a61-426e04c5475a" />
-<img width="384" height="792" alt="Form" src="https://github.com/user-attachments/assets/2ad9b2ce-a447-4bbe-afd2-4a1821cf794a" />
-<img width="384" height="789" alt="Result" src="https://github.com/user-attachments/assets/45982d95-5a7d-4e4a-9d44-4bdea507537e" />
-<img width="386" height="790" alt="Languages" src="https://github.com/user-attachments/assets/73fd408a-e67d-482d-8696-ddf873591303" />
+<img width="389" height="791" alt="Introduction" src="https://github.com/user-attachments/assets/754c7e33-eb5b-4b4e-b45c-0150c6bc0f6a" />
+<img width="388" height="785" alt="Form" src="https://github.com/user-attachments/assets/fbad482c-4c7e-4de5-96f3-97f3e7f417c4" />
+<img width="384" height="789" alt="Result" src="https://github.com/user-attachments/assets/c956d81a-07ed-47d9-9be0-8672ac319b9b" />
+<img width="386" height="790" alt="Languages" src="https://github.com/user-attachments/assets/b17a8ed9-b54d-4cd9-9da3-20e7b3b72db2" />
