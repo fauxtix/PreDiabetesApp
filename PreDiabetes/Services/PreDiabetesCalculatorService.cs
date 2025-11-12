@@ -1,4 +1,5 @@
 ﻿using PreDiabetes.Models;
+using System.Globalization;
 using System.Text;
 
 namespace PreDiabetes.Services;
@@ -62,33 +63,71 @@ public class PreDiabetesCalculatorService : IPreDiabetesCalculatorService
 
     private static (string Message, string Rotulo) ObterMensagemFindrisc(int total)
     {
+        // Detect language: "pt" for Portuguese; default to English if not pt
+        var twoLetter = (CultureInfo.CurrentUICulture ?? CultureInfo.CurrentCulture).TwoLetterISOLanguageName;
+        var isPt = twoLetter.Equals("pt", StringComparison.OrdinalIgnoreCase);
+
         var sb = new StringBuilder();
-        if (total <= 6)
-            return ("Risco baixo a 10 anos (estimativa FINDRISC): aproximadamente <5% de desenvolver diabetes.", "Baixo");
 
-        if (total <= 11)
+        if (isPt)
         {
-            sb.AppendLine("Risco ligeiramente elevado a 10 anos (FINDRISC).");
-            sb.AppendLine("Estimativa aproximada: ~4% (varia por população).");
-            return (sb.ToString(), "Ligeiramente elevado");
-        }
+            if (total <= 6)
+                return ("Risco baixo a 10 anos (estimativa FINDRISC): aproximadamente <5% de desenvolver diabetes.", "Baixo");
 
-        if (total <= 14)
+            if (total <= 11)
+            {
+                sb.AppendLine("Risco ligeiramente elevado a 10 anos (FINDRISC).");
+                sb.AppendLine("Estimativa aproximada: ~4% (varia por população).");
+                return (sb.ToString(), "Ligeiramente elevado");
+            }
+
+            if (total <= 14)
+            {
+                sb.AppendLine("Risco moderado a 10 anos (FINDRISC).");
+                sb.AppendLine("Estimativa aproximada: ~17%.");
+                return (sb.ToString(), "Moderado");
+            }
+
+            if (total <= 20)
+            {
+                sb.AppendLine("Risco alto a 10 anos (FINDRISC).");
+                sb.AppendLine("Estimativa aproximada: ~33%.");
+                return (sb.ToString(), "Alto");
+            }
+
+            sb.AppendLine("Risco muito alto a 10 anos (FINDRISC).");
+            sb.AppendLine("Estimativa aproximada: >50%.");
+            return (sb.ToString(), "Muito alto");
+        }
+        else
         {
-            sb.AppendLine("Risco moderado a 10 anos (FINDRISC).");
-            sb.AppendLine("Estimativa aproximada: ~17%.");
-            return (sb.ToString(), "Moderado");
-        }
+            if (total <= 6)
+                return ("Low risk over 10 years (FINDRISC estimate): about <5% chance of developing diabetes.", "Low");
 
-        if (total <= 20)
-        {
-            sb.AppendLine("Risco alto a 10 anos (FINDRISC).");
-            sb.AppendLine("Estimativa aproximada: ~33%.");
-            return (sb.ToString(), "Alto");
-        }
+            if (total <= 11)
+            {
+                sb.AppendLine("Slightly elevated risk over 10 years (FINDRISC).");
+                sb.AppendLine("Estimated probability: ~4% (varies by population).");
+                return (sb.ToString(), "Slightly elevated");
+            }
 
-        sb.AppendLine("Risco muito alto a 10 anos (FINDRISC).");
-        sb.AppendLine("Estimativa aproximada: >50%.");
-        return (sb.ToString(), "Muito alto");
+            if (total <= 14)
+            {
+                sb.AppendLine("Moderate risk over 10 years (FINDRISC).");
+                sb.AppendLine("Estimated probability: ~17%.");
+                return (sb.ToString(), "Moderate");
+            }
+
+            if (total <= 20)
+            {
+                sb.AppendLine("High risk over 10 years (FINDRISC).");
+                sb.AppendLine("Estimated probability: ~33%.");
+                return (sb.ToString(), "High");
+            }
+
+            sb.AppendLine("Very high risk over 10 years (FINDRISC).");
+            sb.AppendLine("Estimated probability: >50%.");
+            return (sb.ToString(), "Very high");
+        }
     }
 }

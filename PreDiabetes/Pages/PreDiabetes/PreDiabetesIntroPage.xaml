@@ -74,14 +74,14 @@
                     <CollectionView ItemsSource="{Binding Items}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="x:String">
-                                <Label Text="{Binding .}" Style="{StaticResource BodyLabel}" Margin="0,4" />
+                                <Label Text="{Binding .}" Style="{StaticResource BodyLabel}" Margin="0,3" />
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </VerticalStackLayout>
             </Border>
 
-            <Border Style="{StaticResource Card}">
+            <Border Style="{StaticResource Card}" Margin="3, 0, 7, 0">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="{resx:Localize Key=Intro_Paragrafo_4}" Style="{StaticResource HeaderLabel}" />
                     <Label

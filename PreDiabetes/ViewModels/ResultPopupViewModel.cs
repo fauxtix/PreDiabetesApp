@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PreDiabetes.Resources.Languages;
+using System.Globalization;
 
 namespace PreDiabetes.ViewModels;
 
@@ -8,6 +10,10 @@ public partial class ResultPopupViewModel : ObservableObject
     readonly string _shareText;
 
     public event Action? RequestClose;
+
+    public string PartilharButtonText => $"🔗 {AppResources.TituloPartilhar}";
+    public string CopiarButtonText => $"📋 {AppResources.TituloCopiar}";
+    public string FecharButtonText => $"✖ {AppResources.TituloFechar}";
 
     [ObservableProperty] int points;
     [ObservableProperty] string pointsText = string.Empty;
@@ -31,7 +37,7 @@ public partial class ResultPopupViewModel : ObservableObject
     public ResultPopupViewModel(int points, string? riskFactor, string? message, string? bmiText = null, string? bmiCategory = null)
     {
         Points = points;
-        PointsText = $"Pontos: {points}";
+        PointsText = $"{AppResources.TituloPontos}: {points}";
 
         // BMI props
         BmiText = bmiText ?? string.Empty;
@@ -45,8 +51,14 @@ public partial class ResultPopupViewModel : ObservableObject
         if (points <= 0)
         {
             IsInsufficient = true;
-            RiskText = "Dados insuficientes";
-            Message = "Dados insuficientes para calcular o risco. Verifique as entradas e tente novamente.";
+            RiskText = (CultureInfo.CurrentUICulture?.TwoLetterISOLanguageName == "en")
+                ? "Insufficient data"
+                : "Dados insuficientes";
+
+            Message = (CultureInfo.CurrentUICulture?.TwoLetterISOLanguageName == "en")
+                ? "Insufficient data to calculate risk. Verify inputs and try again."
+                : "Dados insuficientes para calcular o risco. Verifique as entradas e tente novamente.";
+
             CopyEnabled = false;
             RiskBadgeHex = "#95A5A6";
             IconText = "❔";
@@ -59,8 +71,10 @@ public partial class ResultPopupViewModel : ObservableObject
             Message = message ?? string.Empty;
             CopyEnabled = true;
 
-            var r = (riskFactor ?? string.Empty).ToLowerInvariant();
-            if (r.Contains("alto") || r.Contains("high") || r.Contains("elevado"))
+            var r = (riskFactor ?? string.Empty).Trim().ToLowerInvariant();
+
+            // Match Portuguese or English synonyms
+            if (r.Contains("alto") || r.Contains("high") || r.Contains("elevado") || r.Contains("muito alto") || r.Contains("very high"))
             {
                 RiskBadgeHex = "#E74C3C";
                 IconText = "⚠️";
@@ -72,19 +86,26 @@ public partial class ResultPopupViewModel : ObservableObject
                 IconText = "ℹ️";
                 IconCircleHex = "#FFF8ED";
             }
-            else
+            else if (r.Contains("baixo") || r.Contains("low") || r.Contains("leve") || r.Contains("slight"))
             {
                 RiskBadgeHex = "#27AE60";
                 IconText = "✅";
                 IconCircleHex = "#EEF9F1";
             }
+            else
+            {
+                // Slightly elevated (en/pt) or any other value
+                RiskBadgeHex = "#F39C12";
+                IconText = "ℹ️";
+                IconCircleHex = "#FFF8ED";
+            }
         }
 
         var sb = new System.Text.StringBuilder();
-        sb.AppendLine($"Pontos: {Points}");
-        sb.AppendLine($"Risco: {RiskText}");
+        sb.AppendLine($"{AppResources.TituloPontos}: {Points}");
+        sb.AppendLine($"{AppResources.TituloRisco}: {RiskText}");
         if (!string.IsNullOrWhiteSpace(BmiText))
-            sb.AppendLine($"\nIMC: {BmiText} ({BmiCategory})");
+            sb.AppendLine($"\n{AppResources.TituloIMC}: {BmiText} ({BmiCategory})");
         sb.AppendLine();
         sb.AppendLine(Message ?? string.Empty);
 
@@ -93,20 +114,23 @@ public partial class ResultPopupViewModel : ObservableObject
         StatusText = string.Empty;
         IsStatusVisible = false;
     }
-
     static (string Hex, string Icon) MapBmiCategoryToVisuals(string category)
     {
         return (category ?? string.Empty).Trim() switch
         {
-            "Muito Baixo" => ("#5D6D7E", "❗"),
-            "Baixo" => ("#F39C12", "ℹ️"),
+            // Portuguese
+            "Muito Baixo" or "Very Low" => ("#5D6D7E", "❗"),
+            "Baixo" or "Low" => ("#F39C12", "ℹ️"),
             "Normal" => ("#27AE60", "✅"),
-            "Alto" => ("#F1C40F", "⚠️"),
-            "Muito Alto" => ("#E74C3C", "⛔"),
+            "Alto" or "High" => ("#F1C40F", "⚠️"),
+            "Muito Alto" or "Very High" => ("#E74C3C", "⛔"),
+            // Moderate (English and Portuguese)
+            "Moderado" or "Moderate" => ("#F39C12", "ℹ️"),
+            // Slightly elevated
+            "Ligeiramente elevado" or "Slightly elevated" => ("#F39C12", "ℹ️"),
             _ => ("#00000000", string.Empty)
         };
     }
-
 
     [RelayCommand]
     async Task Copy()
@@ -116,11 +140,11 @@ public partial class ResultPopupViewModel : ObservableObject
         try
         {
             await Clipboard.SetTextAsync(_shareText);
-            await ShowTransientStatusAsync("Copiado para a área de transferência");
+            await ShowTransientStatusAsync(AppResources.TituloCopiadoClipboard);
         }
         catch
         {
-            await ShowTransientStatusAsync("Falha ao copiar");
+            await ShowTransientStatusAsync(AppResources.TituloFalhaAoCopiar);
         }
     }
 
@@ -140,13 +164,13 @@ public partial class ResultPopupViewModel : ObservableObject
             await Share.RequestAsync(new ShareTextRequest
             {
                 Text = _shareText,
-                Title = "Resultado"
+                Title = AppResources.TituloResultado
             });
-            await ShowTransientStatusAsync("Compartilhado");
+            await ShowTransientStatusAsync(AppResources.TituloPartilhado);
         }
         catch
         {
-            await ShowTransientStatusAsync("Falha ao compartilhar");
+            await ShowTransientStatusAsync(AppResources.TituloFalhaAoPartilhar);
         }
     }
 

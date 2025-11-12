@@ -27,10 +27,11 @@ public partial class PreDiabetesIntroViewModel : ObservableObject
                 "Family history of diabetes",
                 "Physical activity (≥30 min/day)",
                 "Vegetable/fruit consumption",
-                "Waist circumference (men/women)"
+                "Waist circumference (men/women)",
+                "Weight (kg) and Height (cm)"
             };
         }
-        else 
+        else
         {
             Title = "Introdução";
             Items = new ObservableCollection<string>
@@ -41,7 +42,8 @@ public partial class PreDiabetesIntroViewModel : ObservableObject
                 "Parentes com diabetes",
                 "Atividade física (≥30 min/dia)",
                 "Consumo de vegetais/fruta",
-                "Circunferência da cintura (homens/mulheres)"
+                "Circunferência da cintura (homens/mulheres)",
+                "Peso (kg) e Altura (cm)"
             };
         }
     }

@@ -295,7 +295,7 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Esta ferramenta estima o risco de pré-diabetes com base em fatores demográficos, hábitos e exames simples. Os resultados são indicativos e não substituem uma avaliação clínica.
+        ///   Looks up a localized string similar to Esta ferramenta estima o risco de pré-diabetes com base em fatores demográficos, hábitos e exames simples. Os resultados são indicativos e não substituem uma avaliação clínica..
         /// </summary>
         public static string Intro_Paragrafo_2 {
             get {
@@ -979,6 +979,24 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copiado para a área de transferência.
+        /// </summary>
+        public static string TituloCopiadoClipboard {
+            get {
+                return ResourceManager.GetString("TituloCopiadoClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copiar.
+        /// </summary>
+        public static string TituloCopiar {
+            get {
+                return ResourceManager.GetString("TituloCopiar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cor.
         /// </summary>
         public static string TituloCor {
@@ -1357,6 +1375,33 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Falha ao copiar para o Clpboard.
+        /// </summary>
+        public static string TituloFalhaAoCopiar {
+            get {
+                return ResourceManager.GetString("TituloFalhaAoCopiar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Falha ao partilhar.
+        /// </summary>
+        public static string TituloFalhaAoPartilhar {
+            get {
+                return ResourceManager.GetString("TituloFalhaAoPartilhar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fechar.
+        /// </summary>
+        public static string TituloFechar {
+            get {
+                return ResourceManager.GetString("TituloFechar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mulher.
         /// </summary>
         public static string TituloFeminino {
@@ -1654,6 +1699,24 @@ namespace PreDiabetes.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Partilhado.
+        /// </summary>
+        public static string TituloPartilhado {
+            get {
+                return ResourceManager.GetString("TituloPartilhado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Partilhar.
+        /// </summary>
+        public static string TituloPartilhar {
+            get {
+                return ResourceManager.GetString("TituloPartilhar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pendente.
         /// </summary>
         public static string TituloPendente {
@@ -1695,6 +1758,15 @@ namespace PreDiabetes.Resources.Languages {
         public static string TituloPesquisarContacto {
             get {
                 return ResourceManager.GetString("TituloPesquisarContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pontos.
+        /// </summary>
+        public static string TituloPontos {
+            get {
+                return ResourceManager.GetString("TituloPontos", resourceCulture);
             }
         }
         
@@ -1767,6 +1839,24 @@ namespace PreDiabetes.Resources.Languages {
         public static string TituloRestore {
             get {
                 return ResourceManager.GetString("TituloRestore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resultado.
+        /// </summary>
+        public static string TituloResultado {
+            get {
+                return ResourceManager.GetString("TituloResultado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Risco.
+        /// </summary>
+        public static string TituloRisco {
+            get {
+                return ResourceManager.GetString("TituloRisco", resourceCulture);
             }
         }
         

@@ -774,4 +774,34 @@
   <data name="TituloIMC" xml:space="preserve">
     <value>BMI</value>
   </data>
+  <data name="TituloResultado" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="TituloPartilhar" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="TituloCopiar" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="TituloFechar" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="TituloPontos" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="TituloRisco" xml:space="preserve">
+    <value>Risk</value>
+  </data>
+  <data name="TituloPartilhado" xml:space="preserve">
+    <value>Shared</value>
+  </data>
+  <data name="TituloFalhaAoPartilhar" xml:space="preserve">
+    <value>Failed to share</value>
+  </data>
+  <data name="TituloCopiadoClipboard" xml:space="preserve">
+    <value>Copied to clipboard</value>
+  </data>
+  <data name="TituloFalhaAoCopiar" xml:space="preserve">
+    <value>Failed to copy to the clipboard</value>
+  </data>
 </root>

@@ -5,6 +5,7 @@
     xmlns:popup="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
     xmlns:conv="clr-namespace:PreDiabetes.Converters"
     xmlns:vm="clr-namespace:PreDiabetes.ViewModels"
+    xmlns:resx="clr-namespace:PreDiabetes.Resources.Languages"
     x:Class="PreDiabetes.Pages.PreDiabetes.ResultPopup"
     x:DataType="vm:ResultPopupViewModel">
     <popup:Popup.Resources>
@@ -81,7 +82,7 @@
                     </Border>
 
                     <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Fill" Spacing="2">
-                        <Label Text="Resultado" FontAttributes="Bold" FontSize="18" />
+                        <Label Text="{resx:Localize Key=TituloResultado}" FontAttributes="Bold" FontSize="18" />
                         <Label Text="{Binding PointsText}" FontSize="14" TextColor="{DynamicResource PrimaryTextColor}" />
                     </VerticalStackLayout>
 
@@ -102,7 +103,7 @@
                 </ScrollView>
 
                 <!-- IMC section: only visible when BmiText is set -->
-                <Label Text="IMC" FontAttributes="Bold" FontSize="14"
+                <Label Text="{resx:Localize Key=TituloIMC}" FontAttributes="Bold" FontSize="14"
                        IsVisible="{Binding BmiText, Converter={x:Static conv:NullOrEmptyToBoolConverter.Instance}}" />
                 <Border                    
                     Background="#F7FBFF" Stroke="{StaticResource BorderLight}" StrokeThickness="1" 
@@ -123,9 +124,20 @@
                 <Label Text="{Binding StatusText}" FontSize="13" TextColor="{DynamicResource PrimaryTextColor}" IsVisible="{Binding IsStatusVisible}" HorizontalOptions="Center" />
 
                 <HorizontalStackLayout Spacing="10" HorizontalOptions="End">
-                    <Button Text="🔗  Partilhar" Command="{Binding PartilharCommand}" IsEnabled="{Binding CopyEnabled}" Style="{StaticResource PopupPrimaryButton}" />
-                    <Button Text="📋  Copiar" Command="{Binding CopyCommand}" IsEnabled="{Binding CopyEnabled}" Style="{StaticResource PopupSecondaryButton}" />
-                    <Button Text="✖  Fechar" Command="{Binding CloseCommand}" Style="{StaticResource PopupGhostButton}" />
+                    <Button 
+                        Text="{Binding PartilharButtonText}" 
+                        Command="{Binding PartilharCommand}" 
+                        IsEnabled="{Binding CopyEnabled}" 
+                        Style="{StaticResource PopupPrimaryButton}" />
+                    <Button 
+                        Text="{Binding CopiarButtonText}" 
+                        Command="{Binding CopyCommand}" 
+                        IsEnabled="{Binding CopyEnabled}" 
+                        Style="{StaticResource PopupSecondaryButton}" />
+                    <Button 
+                        Text="{Binding FecharButtonText}" 
+                        Command="{Binding CloseCommand}" 
+                        Style="{StaticResource PopupGhostButton}" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
         </Border>

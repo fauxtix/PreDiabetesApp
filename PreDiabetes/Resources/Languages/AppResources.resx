@@ -685,7 +685,7 @@
     <value>O que avalia esta calculadora</value>
   </data>
   <data name="Intro_Paragrafo_2" xml:space="preserve">
-    <value>Esta ferramenta estima o risco de pré-diabetes com base em fatores demográficos, hábitos e exames simples. Os resultados são indicativos e não substituem uma avaliação clínica</value>
+    <value>Esta ferramenta estima o risco de pré-diabetes com base em fatores demográficos, hábitos e exames simples. Os resultados são indicativos e não substituem uma avaliação clínica.</value>
   </data>
   <data name="Intro_Paragrafo_3" xml:space="preserve">
     <value>Nota sobre precisão</value>
@@ -773,5 +773,35 @@
   </data>
   <data name="TituloIMC" xml:space="preserve">
     <value>IMC</value>
+  </data>
+  <data name="TituloResultado" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="TituloPartilhar" xml:space="preserve">
+    <value>Partilhar</value>
+  </data>
+  <data name="TituloCopiar" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="TituloFechar" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="TituloPontos" xml:space="preserve">
+    <value>Pontos</value>
+  </data>
+  <data name="TituloRisco" xml:space="preserve">
+    <value>Risco</value>
+  </data>
+  <data name="TituloPartilhado" xml:space="preserve">
+    <value>Partilhado</value>
+  </data>
+  <data name="TituloFalhaAoPartilhar" xml:space="preserve">
+    <value>Falha ao partilhar</value>
+  </data>
+  <data name="TituloCopiadoClipboard" xml:space="preserve">
+    <value>Copiado para a área de transferência</value>
+  </data>
+  <data name="TituloFalhaAoCopiar" xml:space="preserve">
+    <value>Falha ao copiar para o Clpboard</value>
   </data>
 </root>

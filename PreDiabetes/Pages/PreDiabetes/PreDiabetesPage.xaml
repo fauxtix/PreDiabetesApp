@@ -62,7 +62,7 @@
             <Label Text="{resx:Localize Key=TituloSimulacao}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
 
             <!-- Age Group Picker -->
-            <Border Style="{StaticResource SectionCard}">
+            <Border Style="{StaticResource SectionCard}" HeightRequest="90">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="{resx:Localize Key=Simulacao_GrupoIdades}" Style="{StaticResource SectionHeader}" />
                     <Picker
@@ -73,7 +73,7 @@
             </Border>
 
             <!-- Gender Picker and Smoker Switch -->
-            <Border Style="{StaticResource SectionCard}">
+            <Border Style="{StaticResource SectionCard}" HeightRequest="80">
                 <Grid ColumnDefinitions="*,Auto" ColumnSpacing="24">
                     <VerticalStackLayout>
                         <Label Text="{resx:Localize Key=TituloSexo}" Style="{StaticResource SectionHeader}" />
@@ -92,9 +92,9 @@
 
             <!-- Medication, Glucose, Family Diabetes, Activity -->
             <Border Style="{StaticResource SectionCard}">
-                <VerticalStackLayout>
+                <VerticalStackLayout Spacing="2">
                     <Label Text="{resx:Localize Key=Simulacao_HitoricoExames_Titulo}" Style="{StaticResource SectionHeader}" />
-                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto, Auto, Auto, Auto" >
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto, Auto,Auto, Auto">
                         <Label Text="{resx:Localize Key=Simulacao_Hipertensao}" Style="{StaticResource FieldLabel}" VerticalOptions="Center" />
                         <Switch Grid.Column="1" IsToggled="{Binding HipertensaoMedication, Mode=TwoWay}" HorizontalOptions="End" />
 
@@ -109,14 +109,13 @@
                     </Grid>
                 </VerticalStackLayout>
             </Border>
-
             <!-- Vegetables Radio Group -->
             <Border Style="{StaticResource SectionCard}">
                 <VerticalStackLayout>
                     <Label Text="{resx:Localize Key=Simulacao_Vegetais_Label}" Style="{StaticResource FieldLabel}" />
                     <VerticalStackLayout>
                         <RadioButton Content="{Binding VegetaisOptionYes}" IsChecked="{Binding VegetaisTodosOsDias, Mode=TwoWay}" GroupName="Veg" />
-                        <RadioButton Content="{Binding VegetaisOptionNo}" IsChecked="{Binding VegetaisTodosOsDias, Mode=TwoWay, Converter={StaticResource InverseBoolConverter}}" GroupName="Veg" />
+                        <RadioButton Margin="0, -10, 0, 0" Content="{Binding VegetaisOptionNo}" IsChecked="{Binding VegetaisTodosOsDias, Mode=TwoWay, Converter={StaticResource InverseBoolConverter}}" GroupName="Veg" />
                     </VerticalStackLayout>
                 </VerticalStackLayout>
             </Border>
