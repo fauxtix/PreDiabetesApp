@@ -43,3 +43,7 @@
 
 ## 🚀 **Como começar na app**
 - Toque no botão **Iniciar simulação** para responder ao questionário e calcular o seu risco de pré-diabetes.
+
+---
+
+> 🇬🇧 [English version](ENGLISH.md)
