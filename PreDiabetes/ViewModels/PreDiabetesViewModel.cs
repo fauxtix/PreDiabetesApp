@@ -117,6 +117,12 @@ public partial class PreDiabetesViewModel : ObservableObject
     public bool ShowManWaist => SelectedGender == GenderOptions.LastOrDefault();
     public bool ShowWomanWaist => SelectedGender == GenderOptions.FirstOrDefault();
 
+    partial void OnSelectedGenderChanged(string? value)
+    {
+        OnPropertyChanged(nameof(ShowManWaist));
+        OnPropertyChanged(nameof(ShowWomanWaist));
+    }
+
     partial void OnWeightKgTextChanged(string value) => ValidateWeightAndHeight();
     partial void OnHeightCmTextChanged(string value) => ValidateWeightAndHeight();
 
