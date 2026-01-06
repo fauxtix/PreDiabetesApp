@@ -18,7 +18,6 @@
             <Color x:Key="Primary">#2B0B98</Color>
             <Color x:Key="MutedText">#6B6B6B</Color>
             <Color x:Key="CardBackground">#FFFFFF</Color>
-            <Color x:Key="PageBackgroundColor">#F4F5FA</Color>
             <Color x:Key="BorderLight">#E6E7F0</Color>
 
             <Style x:Key="SectionCard" TargetType="Border">
